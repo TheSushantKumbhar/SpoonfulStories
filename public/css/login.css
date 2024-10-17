@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --Chocolate: #903E1F;
+    --Croissant: #E07425;
+    --Golden: #FFC129;
+    --SourDough: #FFF38E;
+    --white: white;
+    --black: black;
+
+}
+
+body {
+    background-size: cover;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: var(--SourDough);
+    height: 100vh;
+}
+
+.flexContainer{
+    margin-top: 12vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background-color: var(--Golden);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.685);
+    width: 400px;
+    text-align: center;
+    overflow: hidden;
+}
+
+h2 {
+    font-family: "Style Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 4rem;
+    color:black;
+    border-bottom: 1px solid black;
+    margin-bottom: 10px;
+}
+
+/* h3
+{
+    font-family: "Rubik Scribble", system-ui;
+    font-size: 30px;
+    font-weight: 1000;
+    font-style: normal;
+    color:black;
+} */
+
+input {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="submit"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+input[type="submit"] {
+    background-color: var(--Chocolate);
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color:var(--Croissant);
+}
+
+.switch {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.switch button {
+    color: white;
+    background: none;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.switch button.active {
+    color: #007bff;
+}
+
+.hide {
+    display: none;
+}

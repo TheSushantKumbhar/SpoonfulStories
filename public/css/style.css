@@ -20,7 +20,7 @@
     font-style: normal;
 }
 
-header {
+.header {
     background-color: var(--SourDough);
     /* animation: bg 30s linear infinite; */
     /* background-image: url(images/main_background3.jpg); */
