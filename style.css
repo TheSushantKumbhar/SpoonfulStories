@@ -38,6 +38,12 @@ header {
     animation: bg 5s linear infinite;
 } */
 
+.logom {
+    background-color: black;
+    height: 3rem;
+    width: 3rem;
+}
+
 nav {
     background-color: var(--Golden);
     display: flex;
