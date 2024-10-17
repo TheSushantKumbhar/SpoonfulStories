@@ -165,17 +165,54 @@ nav {
 
 }
 
-.postRecepie {
+.discover {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-style: normal;
-    padding: 15px;
+    padding: 15px 55px;
     border: 2px solid black;
-    border-radius: 50vw;
-    background-color: var(--Croissant);
+    border-radius: 50px;
+    background: var(--Croissant);
+    /* background-color: var(--Croissant); */
+     margin: 0 auto;
     /* background: linear-gradient(90deg,var(--Golden),var(--SourDough)); */
     /* animation: bg 5s linear infinite; */
+    position: relative;
 }
+
+/* .discover::after, .discover::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle), #ff4545, #00ff99, #006aff, #ff0095, #ff4545);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 20px;
+    border-radius: 50px;
+    animation: 3s spin linear infinite;
+  }
+
+  .discover::before{
+    filter: blur(1.5rem);
+    opacity: 0.5;
+  }
+  @keyframes spin{
+    from{
+      --angle: 0deg;
+    }
+    to{
+      --angle: 360deg;
+    }
+  }
+
+  @property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  } */
 
 
 .plate {
@@ -208,7 +245,7 @@ nav {
 }
 
 .half-circle-img:nth-child(4) {
-    transform: rotate(5deg) translateY(-58px) translateX(197px);
+    transform: rotate(5deg) translateY(-38px) translateX(200px);
 }
 
 .half-circle-img:nth-child(5) {

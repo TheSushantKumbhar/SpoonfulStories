@@ -49,15 +49,6 @@ h2 {
     margin-bottom: 10px;
 }
 
-/* h3
-{
-    font-family: "Rubik Scribble", system-ui;
-    font-size: 30px;
-    font-weight: 1000;
-    font-style: normal;
-    color:black;
-} */
-
 input {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
@@ -78,14 +69,14 @@ input[type="submit"] {
 }
 
 input[type="submit"] {
-    background-color: var(--Chocolate);
+    background-color: var(--Croissant);
     color: #fff;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 input[type="submit"]:hover {
-    background-color:var(--Croissant);
+    background-color:var(--Chocolate);
 }
 
 .switch {
