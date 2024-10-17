@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spoonful Stories</title>
+
+    <!--Style.css-->
+    <link rel="stylesheet" href="/css/style.css" />
+    <!-- javascript  -->
+    <script src="/js/rotate.js"></script>
+
+    <%- include("partials/fonts.ejs") %>
+  </head>
+
+  <body>
+    <header>
+      <%- include("partials/navbar.ejs") %>
+
+      <div class="logoContainer">
+        <div class="logo">
+          <h1>Spoonful stories</h1>
+        </div>
+        <div class="moto">
+          <p>Where every recepie tells a story ...</p>
+        </div>
+        <div class="postRecepie">
+          <p>Post your first recepie...</p>
+        </div>
+        <!-- <button onclick="movePlates()">Move Plates</button> -->
+      </div>
+      <div class="plate">
+        <div class="plate">
+          <img
+            src="/images/food_plate.png"
+            alt="plate_1"
+            class="half-circle-img"
+          />
+          <img
+            src="/images/Untitled-1.png"
+            alt="plate_2"
+            class="half-circle-img"
+          />
+          <img
+            src="/images/food_plate.png"
+            alt="plate_3"
+            class="half-circle-img"
+          />
+          <img
+            src="/images/plate_4.png"
+            alt="plate_4"
+            class="half-circle-img"
+          />
+          <img
+            src="/images/food_plate.png"
+            alt="plate_5"
+            class="half-circle-img"
+          />
+          <img
+            src="/images/plate_4.png"
+            alt="plate_6"
+            class="half-circle-img"
+          />
+          <img
+            src="/images/food_plate.png"
+            alt="plate_7"
+            class="half-circle-img"
+          />
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="catageories"></div>
+    </main>
+  </body>
+</html>
