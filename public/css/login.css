@@ -19,6 +19,8 @@ body {
     font-weight: 400;
     font-style: normal;
     background-color: var(--SourDough);
+    /* background-image: url(/SpoonfulStories/public/images/main_background3.jpg); */
+    width: 100vw;
     height: 100vh;
 }
 

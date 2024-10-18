@@ -31,7 +31,7 @@
 
 /* body{
      background-color: rgb(246, 243, 243);
-    background-image: url(images/main_background-2.jpg);
+    background-image: url(/images/main_background3);
     height: 105vh;
     width: 100%;
     background-size: cover; 
@@ -52,6 +52,7 @@ nav {
     /* background-color: #333; */
     padding: 8px 15px;
 }
+
 
 .website-name {
     font-family: "Style Script", cursive;
@@ -234,6 +235,7 @@ nav {
 
 .half-circle-img:nth-child(1) {
     transform: rotate(140deg) translateX(-1px) translateY(306px);
+
 }
 
 .half-circle-img:nth-child(2) {
@@ -262,7 +264,10 @@ nav {
 
 .catageories {
     background-color: var(--SourDough);
+    
 }
+
+
 
 /* @keyframes plateAnimation {
     from{
@@ -271,4 +276,23 @@ nav {
     to{
         transform: translate(-62px,129px);
     }
+} */
+
+/* 
+.bar {
+    width: 128vw;
+    height: 120px; 
+    background-color: var(--Golden); 
+    position: relative;
+    display: flex;
+    justify-content: center; 
+    align-items: flex-end; 
+    transform: translateX(-425px) translateY(-156px);
+}
+
+.half-circle {
+    width: 120px; 
+    height: 120px; 
+    background-color: var(--SourDough);
+    border-radius: 0 0 50px 50px;
 } */
