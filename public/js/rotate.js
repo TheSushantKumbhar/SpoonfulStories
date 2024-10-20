@@ -17,3 +17,4 @@ function movePlates() {
 }
 
 setInterval(movePlates, 2000)
+

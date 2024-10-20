@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/login.css" />
     <%- include("partials/fonts.ejs") %>
+    <!-- <script src="/js/login.js"></script>   -->
   </head>
   <body>
     <%- include("partials/navbar.ejs") %>
-
     <div class="flexContainer">
       <div class="container">
         <h2>Welcome Back!!!</h2>
@@ -30,9 +30,12 @@
               required
             />
             <input type="submit" value="Login" />
-          <a href="/signup">Sign Up</a>
+          <a class="signUp" href="/signup">Sign Up</a>
         </div>
       </div>
     </div>
+  
   </body>
 </html>
+
+

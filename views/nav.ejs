@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* Base Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --Chocolate: #903e1f;
+        --Croissant: #e07425;
+        --Golden: #ffc129;
+        --SourDough: #fff38e;
+        --white: white;
+        --black: black;
+      }
+
+      .poppins-regular {
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      .header {
+        background-color: var(--SourDough);
+        height: 105vh;
+        width: 100%;
+        background-size: cover;
+      }
+
+      nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+
+      /* Circle Navigation */
+      .circle-nav {
+        position: relative;
+        width: 80px;
+        height: 80px;
+        background-color: var(--Golden);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: width 0.5s ease, height 0.5s ease;
+        cursor: pointer;
+      }
+
+      .circle-nav.expanded {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+      }
+
+      .menu-icon {
+        font-size: 30px;
+        color: var(--black);
+      }
+
+      .nav-links,
+      .user-actions {
+        display: none;
+        flex-direction: column;
+        gap: 15px;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .circle-nav.expanded .nav-links,
+      .circle-nav.expanded .user-actions {
+        display: flex;
+      }
+
+      .nav-links a,
+      .user-actions a {
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        font-size: 13px;
+        padding: 10px 20px;
+        border: 2px solid black;
+        border-radius: 20px;
+        background-color: var(--Croissant);
+        box-shadow: 0px 3px 3px 2px rgb(0 0 0 / 38%);
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+      }
+
+      .nav-links a:hover,
+      .user-actions a:hover {
+        background-color: var(--Golden);
+      }
+
+      .nav-links a,
+      .user-actions a {
+        opacity: 0;
+        transform: scale(0);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+      }
+
+      .circle-nav.expanded .nav-links a,
+      .circle-nav.expanded .user-actions a {
+        opacity: 1;
+        transform: scale(1);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <!-- Website name-->
+        <div class="circle-nav">
+          <div class="menu-icon">☰</div>
+
+          <!-- Navigation links -->
+          <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="#daily-bite">Daily Bite</a>
+            <a class="post" href="#post-recipes">Post Recipes</a>
+            <a href="#about">About</a>
+          </div>
+
+          <!-- Sign Up/Login and Profile section -->
+          <div class="user-actions">
+            <a href="/login">Sign Up/Log In</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+  </body>
+  <script>
+    document
+      .querySelector(".circle-nav")
+      .addEventListener("click", function () {
+        this.classList.toggle("expanded");
+      });
+  </script>
+</html>
