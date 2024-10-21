@@ -13,18 +13,21 @@
 
 }
 
+header {
+    position: fixed;
+    z-index: 1;
+  }
+
 body {
     background-size: cover;
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-style: normal;
-    /* background-color: var(--SourDough); */
     width: 100%;
     height: 100vh;
 }
 
-.flexContainer{
-    margin-top: 12vh;
+.flexContainer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,6 +41,7 @@ body {
     width: 400px;
     text-align: center;
     overflow: hidden;
+    margin-top: 25vh;
 }
 
 h2 {
@@ -45,7 +49,7 @@ h2 {
     font-weight: 400;
     font-style: normal;
     font-size: 4rem;
-    color:black;
+    color: black;
     border-bottom: 1px solid black;
     margin-bottom: 10px;
 }
@@ -77,7 +81,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color:var(--Chocolate);
+    background-color: var(--Chocolate);
 }
 
 .switch {
@@ -106,7 +110,8 @@ input[type="submit"]:hover {
     display: none;
 }
 
-.login , .signUp{
+.login,
+.signUp {
     text-decoration: none;
     background-size: cover;
     font-family: "Poppins", sans-serif;

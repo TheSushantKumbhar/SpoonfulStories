@@ -1,23 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Spoonful Stories</title>
 
-    <!--Style.css-->
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/login.css">
-    <!-- javascript  -->
-    <script src="/js/rotate.js"></script>
-    <script src="/js/login.js"></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spoonful Stories</title>
 
-    <%- include("partials/fonts.ejs") %>
-  </head>
+  <!--Style.css-->
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/login.css">
+  <link rel="stylesheet" href="/css/preloader.css">
+  <!-- javascript  -->
+  <script src="/js/rotate.js"></script>
+  <script src="/js/login.js"></script>
+  <script src="/js/main.js"></script>
+  <script src="/js/preloader.js"></script>
 
-  <body>
-    <div class="header">
-      <%- include("partials/navbar.ejs") %>
+  <%- include("partials/fonts.ejs") %>
+</head>
+
+<body>
+  <div id="preloader">
+    <h1 class="preloader-text">Spoonful Stories</h1>
+  </div>
+
+  <div class="header">
+    <%- include("partials/navbar.ejs") %>
 
       <div class="logoContainer">
         <div class="logo">
@@ -31,50 +39,26 @@
         </div>
         <!-- <button onclick="movePlates()">Move Plates</button> -->
       </div>
-        <div class="plate">
-          <img
-            src="/images/food_plate_1.png"
-            alt="plate_1"
-            class="half-circle-img"
-          />
-          <img
-            src="/images/food_plate_2.png"
-            alt="plate_2"
-            class="half-circle-img"
-          />
-          <img
-            src="/images/food_plate_3.png"
-            alt="plate_3"
-            class="half-circle-img"
-          />
-          <img
-            src="/images/food_plate_4.png"
-            alt="plate_4"
-            class="half-circle-img"
-          />
-          <img
-            src="/images/food_plate_5.png"
-            alt="plate_5"
-            class="half-circle-img"
-          />
-          <img
-            src="/images/food_plate_6.png"
-            alt="plate_6"
-            class="half-circle-img"
-          />
-          <img
-            src="/images/food_plate_7.png"
-            alt="plate_7"
-            class="half-circle-img"
-          />
-        </div>
-        <div class="sectionLine"></div>
-    </div>
+      <div class="plate">
+        <img src="/images/food_plate_1.png" alt="plate_1" class="half-circle-img" />
+        <img src="/images/food_plate_2.png" alt="plate_2" class="half-circle-img" />
+        <img src="/images/food_plate_3.png" alt="plate_3" class="half-circle-img" />
+        <img src="/images/food_plate_4.png" alt="plate_4" class="half-circle-img" />
+        <img src="/images/food_plate_5.png" alt="plate_5" class="half-circle-img" />
+        <img src="/images/food_plate_6.png" alt="plate_6" class="half-circle-img" />
+        <img src="/images/food_plate_7.png" alt="plate_7" class="half-circle-img" />  
+      </div>
+      <div class="sectionLine"></div>
+  </div>
 
-    <main>
-      <%- include("partials/main.ejs") %>
-    </main>
+  <main>
+    <%- include("partials/main.ejs") %>
+  </main>
 
-    <script src="/js/main.js"></script>
-  </body>
+  <div class="explore">
+    <div class="sectionLine"></div>
+  </div>
+
+</body>
+
 </html>

@@ -20,7 +20,7 @@
 }
 
 .header {
-  background-image: url("../images/Homebackground.jpg");  
+  background-image: url("../images/Homebackground.jpg");
   width: 100%;
   background-size: cover;
 }
@@ -28,6 +28,7 @@
 body {
   background-size: cover;
   height: 100vh;
+  background: radial-gradient(#ffc229bd, #ffffffa7);
 }
 
 .logom {
@@ -124,6 +125,7 @@ nav {
   background-color: var(--Golden);
   border-radius: 20px;
 }
+
 .hamburger {
   display: none;
   font-size: 30px;
@@ -191,6 +193,7 @@ nav {
   width: 100%;
   background-size: cover;
 }
+
 .logo {
   font-family: "Style Script", cursive;
   font-weight: 400;
@@ -198,7 +201,7 @@ nav {
   font-size: 60px;
 }
 
-.logo > h1:hover {
+.logo>h1:hover {
   text-shadow: 0 0 10px var(--Golden), 0 0 10px var(--Golden),
     0 0 10px var(--Golden), 0 0 10px var(--Golden), 0 0 10px var(--Golden),
     0 0 10px var(--Golden);
@@ -243,6 +246,7 @@ nav {
   /* background: linear-gradient(90deg,var(--Golden),var(--SourDough)); */
   /* animation: bg 5s linear infinite; */
   position: relative;
+  box-shadow: 0px 3px 3px 2px rgb(0 0 0 / 38%);
 }
 
 .discover:hover {
@@ -298,21 +302,21 @@ nav {
 }
 
 
-.catageories{
+.catageories {
   height: 8vh;
   width: 100%;
   background-color: var(--Golden);
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   width: 5px;
 }
 
-::-webkit-scrollbar-track{
-  background:var(--SourDough);
+::-webkit-scrollbar-track {
+  background: var(--SourDough);
 }
 
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
   background: var(--Croissant);
   border-radius: 10px;
 }
@@ -325,11 +329,12 @@ nav {
 }
 
 
-main{
+main {
   /* background-image: url("../images/Homebackground.jpg");  */
-  background-size:cover;
-  height: 100vh;
-  
+  background-size: cover;
+  height: 100%;
+  margin-bottom: 40px;
+  /* background: radial-gradient(var(--Golden),var(--Croissant)); */
 }
 
 
@@ -365,15 +370,15 @@ main{
   justify-content: center;
   background-color: rgba(255, 255, 255, 0.1);
   padding: 20px;
-  margin: 20px 0;
+  margin: 15px 0;
   border-radius: 15px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
   animation: fadeIn 1.5s ease;
   width: 100%;
-  max-width: 300px;
+  max-width: 350px;
   /* background-image: url(../images/Homebackground.jpg); */
-  background: radial-gradient(#ffc2296f, #e07425a2);
+  background: radial-gradient(#f7f7f76f, #ffc229);
   border: 1px solid var(--Croissant);
 }
 
@@ -415,9 +420,10 @@ main{
 
 .recipe-title {
   font-size: 1.8rem;
-  color:  var(--black);
+  color: var(--black);
   margin: 5px 0;
 }
+
 .recipe-button {
   display: inline-block;
   padding: 10px 20px;
@@ -435,25 +441,6 @@ main{
   background-color: var(--Golden);
 }
 
-@keyframes fadeIn {
-  from {
-      opacity: 0;
-      transform: translateY(30px);
-  }
-  to {
-      opacity: 1;
-      transform: translateY(0);
-  }
-}
-
-@keyframes typing {
-  from {
-      width: 0;
-  }
-  to {
-      width: 35%;
-  }
-}
 
 .animate-text {
   font-family: "Style Script", cursive;
@@ -462,15 +449,64 @@ main{
   font-size: 80px;
   position: relative;
   display: inline-block;
-  color: var(--Croissant);
+  color: var(--black);
   white-space: nowrap;
   overflow: hidden;
   border-right: 3px solid rgba(209, 99, 36, 0.75);
   width: 0;
-  animation: typing 2s steps(40) 1s 1 normal both;
-  margin-top: 12vh;
+  animation: typing 2s steps(40) 1s 1 normal both, removeCursor 0.5s 3s forwards;
+  margin-top: 14vh;
+  margin-bottom: 0;
   /* text-shadow: 2px 2px rgb(0 0 0 / 38%); */
 }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 35%;
+    /* Adjust width as necessary */
+  }
+}
+
+@keyframes blinkCursor {
+  0% {
+    border-right: 3px solid rgba(209, 99, 36, 0.75);
+  }
+
+  50% {
+    border-right: 3px solid transparent;
+  }
+
+  100% {
+    border-right: 3px solid rgba(209, 99, 36, 0.75);
+  }
+}
+
+@keyframes removeCursor {
+  0% {
+    border-right: 3px solid rgba(209, 99, 36, 0.75);
+  }
+
+  100% {
+    border-right: none;
+  }
+}
+
 
 #celebrationCanvas {
   position: fixed;
@@ -478,8 +514,8 @@ main{
   left: 0;
   width: 100vw;
   height: 100vh;
-  pointer-events: none; 
-  z-index: -1; 
+  pointer-events: none;
+  z-index: -1;
 }
 
 .recipe-container {
@@ -495,4 +531,10 @@ main{
   gap: 20px;
   align-items: flex-start;
   flex-wrap: wrap;
+}
+
+
+.explore {
+  background: radial-gradient(#ffc229, #ffffff);
+  height: 100vh;
 }

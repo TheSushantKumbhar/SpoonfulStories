@@ -1,0 +1,59 @@
+#preloader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: #fff38e;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+}
+
+.preloader-text {
+    font-family: "Style Script", cursive;
+    font-size: 80px;
+    font-weight: 600;
+    color: transparent;
+    background: linear-gradient(to right,
+            var(--Chocolate) 0%,
+            var(--Croissant) 50%,
+            var(--Golden) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: fillText 3s ease-in-out infinite,
+        scaleAndRotate 3s ease-in-out infinite;
+    background-size: 200% 100%;
+    white-space: nowrap;
+    display: inline-block;
+    border-right: 3px solid rgba(209, 99, 36, 0.75);
+    text-shadow: 0 0 10px rgba(209, 99, 36, 0.5), 0 0 20px rgba(209, 99, 36, 0.25);
+}
+
+@keyframes fillText {
+    0% {
+        background-position: 100% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+@keyframes scaleAndRotate {
+
+    0%,
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
+
+    50% {
+        transform: scale(1.1) rotate(3deg);
+    }
+}
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 1s ease;
+}
