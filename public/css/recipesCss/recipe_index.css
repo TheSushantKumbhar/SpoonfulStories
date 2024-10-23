@@ -1,0 +1,91 @@
+:root {
+    --Chocolate: #903e1f;
+    --Croissant: #e07425;
+    --Golden: #ffc129;
+    --SourDough: #fff38e;
+    --white: white;
+    --black: black;
+}
+
+.recipe-discover-container {
+    background-color: white;
+    margin: 15vh 0;
+    border-radius: 20px;
+    box-shadow: 0px 3px 3px 2px rgb(0 0 0 / 38%);
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    background: radial-gradient(#f7f7f76f, #ffc229);
+    /* background: radial-gradient(#ffc229bd, #ffffffa7); */
+}
+
+
+.main-recipe-discover-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.discover-recipe-box {
+    margin: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0px 3px 3px 2px rgb(0 0 0 / 38%);
+    border-radius: 20px;
+    background: radial-gradient(#f7f7f76f, #ffc229);
+}
+
+.discover-recipe-image>img {
+    height: 25vh;
+    width: 25vw;
+    object-fit: cover;
+    margin-left: 10px;
+    border-radius: 20px;
+}
+
+.discover-recipe-image {
+    height: 25vh;
+    width: 25vw;
+}
+
+.discover-recipe-information-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 50vw;
+    height: 30vh;
+    border-radius: 20px;
+    gap:20px;
+}
+
+.discover-recipe-name {
+    /* box-shadow: 0px 3px 3px 2px rgb(0 0 0 / 38%); */
+    /* width: 45vw;
+    height: 7vh; */
+    /* border-radius: 20px; */
+    font-family: "Style Script", cursive;
+    font-size: 4rem;
+    font-weight: 600;
+    width: 100%;
+    padding: 0 10px;
+}
+
+.discover-recipe-discription {
+    /* box-shadow: 0px 3px 3px 2px rgb(0 0 0 / 38%); */
+    height: 15vh;
+    width: 100%;
+    padding: 0 20px;
+    /* border-radius: 20px; */
+    font-family: "Poppins", sans-serif;
+    font-size: 1.25rem;
+}
+
+.show-more {
+    width: 100%;
+    padding: 0 20px;
+    margin-bottom: 30px;
+}
+

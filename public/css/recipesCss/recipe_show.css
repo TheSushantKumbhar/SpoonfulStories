@@ -1,0 +1,34 @@
+:root {
+    --Chocolate: #903e1f;
+    --Croissant: #e07425;
+    --Golden: #ffc129;
+    --SourDough: #fff38e;
+    --white: white;
+    --black: black;
+}
+
+.container {
+    width: 80vw;
+}
+
+.container > img {
+    height: 30vh;
+    width: auto;
+    padding: 20px;
+}
+
+.container > form {
+    padding: 20px;
+}
+
+.container > h1, h2, h3 {
+    padding: 0 20px;
+}
+
+.container > ul, ol {
+    padding: 30px;
+}
+
+.options {
+    padding: 20px;
+}

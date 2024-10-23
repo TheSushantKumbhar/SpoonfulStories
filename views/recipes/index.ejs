@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>All Recipes</title>
     <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/recipe_index.css" />
+    <link rel="stylesheet" href="/css/recipesCss/recipe_index.css" />
     <%- include("../partials/fonts.ejs") %>
   </head>
   <body>
@@ -13,15 +13,22 @@
 
     <div class="main-recipe-discover-container">
       <div class="recipe-discover-container">
+        <% for (let recipe of recipes) { %>
         <div class="discover-recipe-box">
           <div class="discover-recipe-image">
-            <img src="../images/main_food_image.jpg" alt="image_1" />
+            <img src="<%= recipe.image %>" alt="image_1" />
           </div>
-          <div class="discover-recipe-information-container ">
-            <div class="discover-recipe-name"></div>
-            <div class="discover-recipe-discription"></div>
+          <div class="discover-recipe-information-container">
+            <div class="discover-recipe-name"><%= recipe.title %></div>
+            <div class="discover-recipe-discription">
+              <%= recipe.description %>
+            </div>
+            <div class="show-more">
+              <a href="/recipes/<%= recipe._id %>">Show More</a>
+            </div>
           </div>
         </div>
+        <% } %>
       </div>
     </div>
   </body>

@@ -1,0 +1,271 @@
+const recipes = [
+  {
+    title: "Spaghetti Bolognese",
+    description:
+      "A classic Italian pasta dish with a rich and savory meat sauce.",
+    ingredients: [
+      "400g spaghetti",
+      "200g ground beef",
+      "1 onion, finely chopped",
+      "2 cloves garlic, minced",
+      "400g canned tomatoes",
+      "2 tbsp tomato paste",
+      "1 carrot, finely chopped",
+      "1 celery stalk, finely chopped",
+      "Salt and pepper to taste",
+      "Olive oil for cooking",
+      "Grated Parmesan cheese for serving",
+    ],
+    steps: [
+      "Cook the spaghetti according to the package instructions.",
+      "In a pan, heat olive oil and sauté the onions until soft.",
+      "Add garlic and ground beef, cooking until browned.",
+      "Stir in the chopped carrots and celery, cooking for a few more minutes.",
+      "Add canned tomatoes and tomato paste, season with salt and pepper.",
+      "Simmer the sauce for 20 minutes.",
+      "Serve the sauce over the cooked spaghetti and top with grated Parmesan.",
+    ],
+    image:
+      "https://images.unsplash.com/photo-1685156328635-d193547d7118?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    title: "Classic Pancakes",
+    description: "Fluffy and golden pancakes perfect for a weekend breakfast.",
+    ingredients: [
+      "1 cup all-purpose flour",
+      "2 tbsp sugar",
+      "1 tsp baking powder",
+      "1/2 tsp baking soda",
+      "Pinch of salt",
+      "1 cup buttermilk",
+      "1 large egg",
+      "2 tbsp melted butter",
+      "Butter or oil for cooking",
+      "Maple syrup for serving",
+    ],
+    steps: [
+      "In a bowl, mix the flour, sugar, baking powder, baking soda, and salt.",
+      "In another bowl, whisk together the buttermilk, egg, and melted butter.",
+      "Combine the wet and dry ingredients, stirring until just combined.",
+      "Heat a skillet and lightly grease with butter or oil.",
+      "Pour the batter onto the skillet and cook until bubbles form on the surface.",
+      "Flip the pancakes and cook until golden brown.",
+      "Serve with maple syrup.",
+    ],
+    image:
+      "https://images.unsplash.com/photo-1586985288123-2495f577c250?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    title: "Chicken Caesar Salad",
+    description:
+      "A crisp salad with grilled chicken, romaine lettuce, croutons, and Caesar dressing.",
+    ingredients: [
+      "2 chicken breasts",
+      "4 cups romaine lettuce, chopped",
+      "1/2 cup Caesar dressing",
+      "1/4 cup grated Parmesan cheese",
+      "1 cup croutons",
+      "Salt and pepper to taste",
+      "Olive oil for cooking",
+    ],
+    steps: [
+      "Season the chicken breasts with salt and pepper.",
+      "Grill the chicken until fully cooked, then slice.",
+      "In a large bowl, combine the lettuce, Caesar dressing, and Parmesan cheese.",
+      "Add the sliced chicken and croutons to the salad.",
+      "Toss everything together and serve.",
+    ],
+    image:
+      "https://images.unsplash.com/photo-1582034986517-30d163aa1da9?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    title: "Vegetable Stir Fry",
+    description:
+      "A healthy and quick stir fry with mixed vegetables and a savory sauce.",
+    ingredients: [
+      "1 bell pepper, sliced",
+      "1 carrot, sliced",
+      "1 zucchini, sliced",
+      "1 cup broccoli florets",
+      "2 tbsp soy sauce",
+      "1 tbsp oyster sauce",
+      "1 clove garlic, minced",
+      "1 tbsp sesame oil",
+      "Cooked rice for serving",
+    ],
+    steps: [
+      "Heat sesame oil in a large pan or wok.",
+      "Add garlic and sauté until fragrant.",
+      "Add the bell pepper, carrot, zucchini, and broccoli.",
+      "Stir fry for a few minutes until the vegetables are tender-crisp.",
+      "Add soy sauce and oyster sauce, stirring to coat the vegetables.",
+      "Serve the stir-fried vegetables over cooked rice.",
+    ],
+    image:
+      "https://images.unsplash.com/photo-1543826173-cfe2ca17577d?q=80&w=2034&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    title: "Banana Bread",
+    description:
+      "Moist and flavorful banana bread made with ripe bananas and a hint of cinnamon.",
+    ingredients: [
+      "2 ripe bananas, mashed",
+      "1/2 cup sugar",
+      "1/4 cup melted butter",
+      "1 egg",
+      "1 tsp vanilla extract",
+      "1 1/2 cups all-purpose flour",
+      "1 tsp baking soda",
+      "1/2 tsp cinnamon",
+      "Pinch of salt",
+    ],
+    steps: [
+      "Preheat the oven to 350°F (175°C).",
+      "In a bowl, mix the mashed bananas, sugar, melted butter, egg, and vanilla extract.",
+      "In another bowl, whisk together the flour, baking soda, cinnamon, and salt.",
+      "Combine the wet and dry ingredients, stirring until just mixed.",
+      "Pour the batter into a greased loaf pan.",
+      "Bake for 60 minutes or until a toothpick comes out clean.",
+      "Let cool before slicing and serving.",
+    ],
+    image:
+      "https://images.unsplash.com/photo-1606101204735-85ad3a8bfd81?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8QmFuYW5hJTIwQnJlYWR8ZW58MHx8MHx8fDI%3D",
+  },
+  {
+    title: "Chicken Tikka Masala",
+    description:
+      "A flavorful Indian dish made with marinated chicken in a rich, spiced tomato sauce.",
+    ingredients: [
+      "500g chicken breast, diced",
+      "1 cup plain yogurt",
+      "2 tbsp garam masala",
+      "1 tbsp ground cumin",
+      "1 tbsp ground coriander",
+      "1 tbsp turmeric",
+      "1 tsp chili powder",
+      "2 cloves garlic, minced",
+      "1 onion, chopped",
+      "400g canned tomatoes",
+      "1 cup heavy cream",
+      "Salt and pepper to taste",
+      "Fresh cilantro for garnish",
+      "Rice or naan for serving",
+    ],
+    steps: [
+      "In a bowl, mix yogurt, garam masala, cumin, coriander, turmeric, and chili powder.",
+      "Add diced chicken to the marinade and refrigerate for at least 1 hour.",
+      "In a pan, heat oil and sauté the onions until soft.",
+      "Add garlic and the marinated chicken, cooking until browned.",
+      "Stir in canned tomatoes and simmer for 20 minutes.",
+      "Stir in heavy cream and simmer for an additional 10 minutes.",
+      "Serve with rice or naan and garnish with fresh cilantro.",
+    ],
+    image:
+      "https://images.unsplash.com/photo-1565557623262-b51c2513a641?q=80&w=1971&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    title: "Chocolate Chip Cookies",
+    description:
+      "Soft and chewy cookies loaded with chocolate chips, perfect for any sweet craving.",
+    ingredients: [
+      "1 cup unsalted butter, softened",
+      "1 cup brown sugar",
+      "1/2 cup granulated sugar",
+      "2 large eggs",
+      "2 tsp vanilla extract",
+      "2 1/4 cups all-purpose flour",
+      "1 tsp baking soda",
+      "1/2 tsp salt",
+      "2 cups chocolate chips",
+    ],
+    steps: [
+      "Preheat the oven to 350°F (175°C).",
+      "In a large bowl, cream together the butter, brown sugar, and granulated sugar.",
+      "Beat in the eggs and vanilla extract.",
+      "In a separate bowl, mix the flour, baking soda, and salt.",
+      "Gradually add the dry ingredients to the wet ingredients.",
+      "Stir in the chocolate chips.",
+      "Drop spoonfuls of the dough onto a baking sheet.",
+      "Bake for 10-12 minutes or until golden brown.",
+    ],
+    image:
+      "https://images.unsplash.com/photo-1584847801423-852691e41bc7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    title: "Beef Tacos",
+    description:
+      "Mexican-style beef tacos with seasoned ground beef, fresh toppings, and soft tortillas.",
+    ingredients: [
+      "500g ground beef",
+      "1 packet taco seasoning",
+      "8 small tortillas",
+      "1 cup shredded lettuce",
+      "1 cup diced tomatoes",
+      "1/2 cup shredded cheese",
+      "1/2 cup sour cream",
+      "1/4 cup salsa",
+      "Olive oil for cooking",
+    ],
+    steps: [
+      "Heat oil in a pan and brown the ground beef.",
+      "Add taco seasoning and cook according to the packet instructions.",
+      "Warm the tortillas in a pan or microwave.",
+      "Assemble the tacos with beef, lettuce, tomatoes, cheese, sour cream, and salsa.",
+      "Serve immediately.",
+    ],
+    image:
+      "https://images.unsplash.com/photo-1640983743761-4f0e0204bc58?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    title: "Caprese Salad",
+    description:
+      "A simple and fresh Italian salad with ripe tomatoes, mozzarella, and basil.",
+    ingredients: [
+      "4 ripe tomatoes, sliced",
+      "250g fresh mozzarella, sliced",
+      "1/4 cup fresh basil leaves",
+      "2 tbsp balsamic vinegar",
+      "2 tbsp olive oil",
+      "Salt and pepper to taste",
+    ],
+    steps: [
+      "Arrange the tomato and mozzarella slices on a plate, alternating between them.",
+      "Tuck the fresh basil leaves in between the slices.",
+      "Drizzle with olive oil and balsamic vinegar.",
+      "Season with salt and pepper.",
+      "Serve as an appetizer or side dish.",
+    ],
+    image:
+      "https://images.unsplash.com/photo-1529312266912-b33cfce2eefd?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    title: "Shrimp Scampi",
+    description:
+      "A garlicky, buttery shrimp dish served over pasta with a squeeze of fresh lemon.",
+    ingredients: [
+      "400g shrimp, peeled and deveined",
+      "4 cloves garlic, minced",
+      "1/4 cup butter",
+      "1/4 cup olive oil",
+      "1/4 cup white wine",
+      "Juice of 1 lemon",
+      "1/4 cup fresh parsley, chopped",
+      "400g linguine or spaghetti",
+      "Salt and pepper to taste",
+    ],
+    steps: [
+      "Cook the pasta according to the package instructions until al dente. Drain and set aside.",
+      "In a large pan, heat the olive oil and butter over medium heat.",
+      "Add the minced garlic and sauté until fragrant, about 1-2 minutes.",
+      "Add the shrimp to the pan and cook until pink and opaque, about 3-4 minutes.",
+      "Pour in the white wine and lemon juice, stirring to combine. Let the mixture simmer for 2 minutes.",
+      "Season with salt and pepper to taste.",
+      "Add the cooked pasta to the pan and toss to coat with the sauce.",
+      "Garnish with fresh parsley and serve immediately.",
+    ],
+    image:
+      "https://images.unsplash.com/photo-1625943555419-56a2cb596640?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+];
+
+module.exports = recipes;

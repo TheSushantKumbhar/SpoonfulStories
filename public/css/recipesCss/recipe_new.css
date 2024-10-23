@@ -1,0 +1,31 @@
+:root {
+    --Chocolate: #903e1f;
+    --Croissant: #e07425;
+    --Golden: #ffc129;
+    --SourDough: #fff38e;
+    --white: white;
+    --black: black;
+}
+
+.container {
+    padding: 12vh 0;
+}
+
+.container > h1 {
+    font-family: "Style Script", cursive;
+    font-size: 5rem;
+    text-align: center;
+    border-bottom: 1px solid black;
+    margin: 0 35vw;
+    padding: 5px;
+}
+
+.formContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.formContainer > label {
+    text-align: center;
+}

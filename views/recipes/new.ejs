@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Recipe</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/recipesCss/recipe_new.css" />
+    <%- include("../partials/fonts.ejs") %>
+  </head>
+  <body>
+    <%- include("../partials/navbar.ejs") %>
+    <main class="container">
+      <h1>New Recipe</h1>
+      <div class="formContainer">
+        <form action="/recipes" method="POST">
+          <div>
+            <label for="title">Title</label><br />
+            <input type="text" name="recipe[title]" id="title" />
+          </div>
+          <div>
+            <label for="description">Description</label><br />
+            <textarea
+              name="recipe[description]"
+              id="description"
+              rows="5"
+              cols="40"
+            ></textarea>
+          </div>
+          <button>Add Recipe</button>
+        </form>
+      </div>
+      <a href="/recipes">Cancel</a>
+    </main>
+  </body>
+</html>

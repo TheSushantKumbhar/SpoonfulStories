@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/recipesCss/recipe_show.css" />
+    <link rel="stylesheet" href="/css/recipesCss/recipe_index.css" />
+    <%- include("../partials/fonts.ejs") %>
+  </head>
+  <body>
+    <%- include("../partials/navbar.ejs") %>
+    <div class="main-recipe-discover-container">
+      <div class="recipe-discover-container">
+        <main class="container">
+          <h1><%= recipe.title %></h1>
+          <h2><%= recipe.description %></h2>
+
+          <img src="<%= recipe.image %>" alt="image" />
+
+          <h3>Ingredients</h3>
+          <ul>
+            <% for (let ing of recipe.ingredients) { %>
+            <li><%= ing %></li>
+            <% } %>
+          </ul>
+
+          <h3>Steps</h3>
+          <ol>
+            <% for (let step of recipe.steps) { %>
+            <li><%= step %></li>
+            <% } %>
+          </ol>
+
+          <form
+            action="/recipes/<%= recipe._id %>?_method=DELETE"
+            method="POST"
+          >
+            <button>Delete</button>
+          </form>
+
+          <div class="options">
+            <a href="/recipes">All Recipes</a>
+            <a href="/recipes/<%= recipe._id %>/edit">Edit</a>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
