@@ -5,10 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>All Recipes</title>
     <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/recipe_index.css" />
     <%- include("../partials/fonts.ejs") %>
   </head>
   <body>
     <%- include("../partials/navbar.ejs") %>
-    <h1>All Recipes</h1>
+
+    <div class="main-recipe-discover-container">
+      <div class="recipe-discover-container">
+        <div class="discover-recipe-box">
+          <div class="discover-recipe-image">
+            <img src="../images/main_food_image.jpg" alt="image_1" />
+          </div>
+          <div class="discover-recipe-information-container ">
+            <div class="discover-recipe-name"></div>
+            <div class="discover-recipe-discription"></div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

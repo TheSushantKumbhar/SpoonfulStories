@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Load chef hat image
     const chefHatImg = new Image();
-    chefHatImg.src = '/images/chef1-hat.png'; // Replace with the path to your chef hat image
+    chefHatImg.src = '/images/chef1-hat.png'; 
 
     // Helper function for random values
     function random(min, max) {
@@ -21,18 +21,18 @@ document.addEventListener('DOMContentLoaded', () => {
         constructor(x, y) {
             this.x = x;
             this.y = y;
-            this.size = random(30, 50); // Size of the chef hat image
-            this.speedY = random(0.5, 1.5); // Slow upward movement
-            this.sway = random(0.5, 2); // Horizontal sway effect
-            this.angle = random(0, Math.PI * 2); // Initial angle for sway
+            this.size = random(30, 50); 
+            this.speedY = random(0.5, 1.5); 
+            this.sway = random(0.5, 2); 
+            this.angle = random(0, Math.PI * 2); 
             this.alpha = 1;
         }
 
         update() {
-            this.y -= this.speedY; // Move upwards
-            this.x += Math.sin(this.angle) * this.sway; // Sway left and right
-            this.angle += 0.03; // Change angle for sway
-            this.alpha -= 0.01; // Gradually fade out
+            this.y -= this.speedY; 
+            this.x += Math.sin(this.angle) * this.sway; 
+            this.angle += 0.03; 
+            this.alpha -= 0.01; 
             if (this.alpha < 0) this.alpha = 0;
         }
 
@@ -45,11 +45,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Create fewer hats, with randomness
     function createSingleHat() {
-        // Random chance to spawn a hat (e.g., 30% chance)
         if (Math.random() < 0.3) {
-            const x = random(0, canvas.width); // Random x position
-            const y = random(0, canvas.height); // Anywhere on the screen (top to bottom)
-            particles.push(new Particle(x, y)); // Add a single hat particle
+            const x = random(0, canvas.width); 
+            const y = random(0, canvas.height); 
+            particles.push(new Particle(x, y));
         }
     }
 
