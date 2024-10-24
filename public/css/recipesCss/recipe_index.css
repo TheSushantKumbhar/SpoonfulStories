@@ -8,15 +8,16 @@
 }
 
 .recipe-discover-container {
-    background-color: white;
+    background-color: var(--Croissant);
     margin: 15vh 0;
     border-radius: 20px;
     box-shadow: 0px 3px 3px 2px rgb(0 0 0 / 38%);
     /* display: flex;
     justify-content: center;
     align-items: center; */
-    background: radial-gradient(#f7f7f76f, #ffc229);
+    /* background: radial-gradient(#f7f7f76f, #ffc229); */
     /* background: radial-gradient(#ffc229bd, #ffffffa7); */
+    
 }
 
 
