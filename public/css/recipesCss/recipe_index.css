@@ -35,7 +35,8 @@
     gap: 20px;
     box-shadow: 0px 3px 3px 2px rgb(0 0 0 / 38%);
     border-radius: 20px;
-    background: radial-gradient(#f7f7f76f, #ffc229);
+    /* background: radial-gradient(#f7f7f76f, #ffc229); */
+    background-color: var(--white);
 }
 
 .discover-recipe-image>img {
@@ -68,7 +69,7 @@
     height: 7vh; */
     /* border-radius: 20px; */
     font-family: "Style Script", cursive;
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: 600;
     width: 100%;
     padding: 0 10px;
