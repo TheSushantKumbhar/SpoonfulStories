@@ -34,6 +34,29 @@
                 <%= recipe.description %>
             </textarea>
           </div>
+
+          <label>Ingredients: </label>
+          <div class="ingredientList">
+            <% for (let ingredient of recipe.ingredients) { %>
+            <input
+              type="text"
+              name="recipe[ingredients][]"
+              id="ingredient"
+              value="<%= ingredient %>"
+            />
+            <br />
+            <% } %>
+          </div>
+
+          <label for="">Steps: </label>
+          <div class="stepsList">
+            <% for (let step of recipe.steps) { %>
+            <textarea name="recipe[steps][]" id="step">
+            <%= step %>
+            </textarea>
+            <br />
+            <% } %>
+          </div>
           <button>Save Recipe</button>
         </form>
       </div>

@@ -8,16 +8,19 @@
     <link rel="stylesheet" href="/css/recipesCss/recipe_new.css" />
     <%- include("../partials/fonts.ejs") %>
   </head>
+
   <body>
     <%- include("../partials/navbar.ejs") %>
     <main class="container">
       <h1>New Recipe</h1>
+
       <div class="formContainer">
         <form action="/recipes" method="POST">
           <div>
             <label for="title">Title</label><br />
             <input type="text" name="recipe[title]" id="title" />
           </div>
+
           <div>
             <label for="description">Description</label><br />
             <textarea
@@ -26,10 +29,41 @@
               rows="5"
               cols="40"
             ></textarea>
+            <br />
+          </div>
+
+          <label>Ingredients: </label>
+          <div class="ingredientList">
+            <input
+              type="text"
+              name="recipe[ingredients][]"
+              id="ingredient"
+              placeholder="ingredient..."
+            />
+            <br />
+          </div>
+          <button type="button" onclick="addIngredient()">
+            Add Ingredient
+          </button>
+          <br />
+
+          <label for="">Steps: </label>
+          <div class="stepsList">
+            <textarea
+              name="recipe[steps][]"
+              id="step"
+              placeholder="step..."
+            ></textarea
+            ><br />
+          </div>
+          <button type="button" onclick="addStep()">Add Step</button
+          ><br /><br />
           <button type="submit">Add Recipe</button>
         </form>
       </div>
+
       <a href="/recipes">Cancel</a>
     </main>
+    <script src="/js/recipeNew.js"></script>
   </body>
 </html>

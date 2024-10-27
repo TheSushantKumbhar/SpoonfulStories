@@ -48,6 +48,7 @@ app.get("/recipes/new", (req, res) => {
 
 app.post("/recipes", async (req, res) => {
   const recipe = new Recipe(req.body.recipe);
+  console.log(req.body);
   await recipe.save();
   res.redirect(`/recipes`);
 });
