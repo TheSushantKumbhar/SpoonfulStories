@@ -35,6 +35,16 @@
             </textarea>
           </div>
 
+          <div>
+            <label for="">Image URL</label><br />
+            <input
+              type="text"
+              name="recipe[image]"
+              id="img"
+              value="<%= recipe.image %>"
+            />
+          </div>
+
           <label>Ingredients: </label>
           <div class="ingredientList">
             <% for (let ingredient of recipe.ingredients) { %>
