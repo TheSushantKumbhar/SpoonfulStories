@@ -15,10 +15,10 @@
       <h1>New Recipe</h1>
 
       <div class="formContainer">
-        <form action="/recipes" method="POST">
+        <form action="/recipes" method="POST" novalidate>
           <div>
             <label for="title">Title</label><br />
-            <input type="text" name="recipe[title]" id="title" />
+            <input type="text" name="recipe[title]" id="title" required />
           </div>
 
           <div>
@@ -28,13 +28,14 @@
               id="description"
               rows="5"
               cols="40"
+              required
             ></textarea>
             <br />
           </div>
 
           <div>
             <label for="">Image URL</label><br />
-            <input type="text" name="recipe[image]" id="img" />
+            <input type="text" name="recipe[image]" id="img" required />
           </div>
 
           <label>Ingredients: </label>
@@ -44,6 +45,7 @@
               name="recipe[ingredients][]"
               id="ingredient"
               placeholder="ingredient..."
+              required
             />
             <br />
           </div>
@@ -58,6 +60,7 @@
               name="recipe[steps][]"
               id="step"
               placeholder="step..."
+              required
             ></textarea
             ><br />
           </div>

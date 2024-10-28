@@ -21,6 +21,7 @@
               name="recipe[title]"
               id="title"
               value="<%= recipe.title %>"
+              required
             />
           </div>
           <div>
@@ -30,6 +31,7 @@
               id="description"
               rows="5"
               cols="40"
+              required
             >
                 <%= recipe.description %>
             </textarea>
@@ -42,6 +44,7 @@
               name="recipe[image]"
               id="img"
               value="<%= recipe.image %>"
+              required
             />
           </div>
 
@@ -53,6 +56,7 @@
               name="recipe[ingredients][]"
               id="ingredient"
               value="<%= ingredient %>"
+              required
             />
             <br />
             <% } %>
@@ -61,7 +65,7 @@
           <label for="">Steps: </label>
           <div class="stepsList">
             <% for (let step of recipe.steps) { %>
-            <textarea name="recipe[steps][]" id="step">
+            <textarea name="recipe[steps][]" id="step" required>
             <%= step %>
             </textarea>
             <br />
