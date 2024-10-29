@@ -19,17 +19,28 @@
   font-style: normal;
 }
 
+.montserrat-uniquifier {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+}
+
 .header {
-  background-image: url("../images/Homebackground.jpg");
+  background-image: url("../images/homeBG-2.jpeg");
   width: 100%;
   background-size: cover;
+  /* background-color: var(--white); */
+  
 }
 
 body {
   background-size: cover;
   height: 100vh;
-  background: radial-gradient(#ffc229bd, #ffffffa7);
+  /* background: radial-gradient(#ffc229bd, #ffffffa7); */
 }
+
+
 
 .logom {
   background-color: black;
@@ -49,7 +60,7 @@ nav {
   align-items: center;
   padding: 8px 15px;
   width: 100vw;
-  box-shadow: 0px 3px 3px 2px rgb(0 0 0 / 38%);
+  /* box-shadow: 0px 3px 3px 2px rgb(0 0 0 / 38%); */
 }
 
 .website-name {
@@ -65,14 +76,14 @@ nav {
 }
 
 .nav-links a {
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   text-decoration: none;
   font-size: 18px;
   padding: 10px 20px;
-  border: 2px solid black;
+  /* border: 1px solid black; */
   border-radius: 20px;
-  background-color: var(--Croissant);
-  box-shadow: 0px 3px 3px 2px rgb(0 0 0 / 38%);
+  background-color: #e073258a;
+  /* box-shadow: 0px 3px 3px 2px rgb(0 0 0 / 38%); */
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -111,10 +122,10 @@ nav {
   text-decoration: none;
   font-size: 18px;
   padding: 10px 20px;
-  border: 2px solid black;
+  /* border: 2px solid black; */
   border-radius: 20px;
-  background-color: var(--Croissant);
-  box-shadow: 0px 3px 3px 2px rgb(0 0 0 / 38%);
+  background-color: #e0732581;
+  /* box-shadow: 0px 3px 3px 2px rgb(0 0 0 / 38%); */
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -228,7 +239,7 @@ nav {
   font-family: "Poppins", sans-serif;
   font-weight: 0;
   font-style: normal;
-  padding-top: 20px;
+  padding-top: 30px;
   padding-bottom: 50px;
   font-size: 23px;
 }
@@ -238,15 +249,22 @@ nav {
   font-weight: 400;
   font-style: normal;
   padding: 15px 55px;
-  border: 2px solid black;
+  /* border: 2px solid black; */
   border-radius: 50px;
-  background: var(--Croissant);
+  background: #e07325;
   /* background-color: var(--Croissant); */
   margin: 0 auto;
   /* background: linear-gradient(90deg,var(--Golden),var(--SourDough)); */
   /* animation: bg 5s linear infinite; */
   position: relative;
-  box-shadow: 0px 3px 3px 2px rgb(0 0 0 / 38%);
+  /* box-shadow: 0px 3px 3px 2px rgb(0 0 0 / 38%); */
+  text-decoration: none;
+  color: var(--white);
+}
+
+.discover-text{
+  text-decoration: none;
+  color: var(--white);
 }
 
 .discover:hover {
@@ -378,8 +396,9 @@ main {
   width: 100%;
   max-width: 350px;
   /* background-image: url(../images/Homebackground.jpg); */
-  background: radial-gradient(#f7f7f76f, #ffc229);
-  border: 1px solid var(--Croissant);
+  /* background: radial-gradient(#f7f7f76f, #ffc229); */
+  background:rgba(255, 255, 255, 0.435);
+  /* border: 1px solid var(--Croissant); */
 }
 
 .recipe-card:hover {
@@ -419,22 +438,27 @@ main {
 }
 
 .recipe-title {
-  font-size: 1.8rem;
   color: var(--black);
   margin: 5px 0;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  border-bottom: none;
 }
 
 .recipe-button {
   display: inline-block;
   padding: 10px 20px;
   font-size: 1rem;
-  color: var(--black);
-  background-color: var(--Croissant);
-  border-radius: 10px;
+  color: var(--white);
+  background-color: #cdad1e;
+  border-radius: 25px;
   text-decoration: none;
   margin-top: 15px;
   transition: background-color 0.1s ease;
-  box-shadow: 0px 3px 3px 2px rgb(0 0 0 / 38%)
+  /* box-shadow: 0px 3px 3px 2px rgb(0 0 0 / 38%) */
 }
 
 .recipe-button:hover {

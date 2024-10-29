@@ -7,26 +7,42 @@
     --black: black;
 }
 
-.container {
+.post-container {
     padding: 12vh 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-.container > h1 {
+.post-container > h1 {
     font-family: "Style Script", cursive;
     font-size: 5rem;
     text-align: center;
-    border-bottom: 1px solid black;
-    margin: 0 35vw;
+    margin: 0 20vw;
     padding: 5px;
 }
 
-.formContainer {
+
+.main-form-container{
+    background-color: var(--white);
+    width: 94vw;
+    height: 130vh;
+    border-radius: 20px;
+    box-shadow:0px 3px 3px 2px rgb(0 0 0 / 38%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.form-Container {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 40px;
 }
 
-.formContainer > label {
+.form-Container > label {
     text-align: center;
 }
 

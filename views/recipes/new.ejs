@@ -1,77 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>New Recipe</title>
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/recipesCss/recipe_new.css" />
-    <%- include("../partials/fonts.ejs") %>
-  </head>
 
-  <body>
-    <%- include("../partials/navbar.ejs") %>
-    <main class="container">
-      <h1>New Recipe</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>New Recipe</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/recipesCss/recipe_new.css" />
+  <%- include("../partials/fonts.ejs") %>
+</head>
 
-      <div class="formContainer">
-        <form action="/recipes" method="POST" novalidate>
-          <div>
-            <label for="title">Title</label><br />
-            <input type="text" name="recipe[title]" id="title" required />
-          </div>
+<body>
+  <%- include("../partials/navbar.ejs") %>
+    <main class="post-container">
+      <!-- <h1>Post your recipe...</h1> -->
 
-          <div>
-            <label for="description">Description</label><br />
-            <textarea
-              name="recipe[description]"
-              id="description"
-              rows="5"
-              cols="40"
-              required
-            ></textarea>
+
+      <div class="main-form-container">
+        <div class="form-Container">
+          <form action="/recipes" method="POST" novalidate>
+            <div>
+              <label for="title">Title</label><br />
+              <input type="text" name="recipe[title]" id="title" required />
+            </div>
+
+            <div>
+              <label for="description">Description</label>
+              <br />
+              <textarea name="recipe[description]" id="description" rows="5" cols="40" required></textarea>
+              </br>
+            </div>
+
+            <div>
+              <label for="">Image URL</label><br />
+              <input type="text" name="recipe[image]" id="img" required />
+            </div>
+
+            <label>Ingredients: </label>
+            <div class="ingredientList">
+              <input type="text" name="recipe[ingredients][]" id="ingredient" placeholder="ingredient..." required />
+              <br />
+            </div>
+            <button type="button" onclick="addIngredient()">
+              Add Ingredient
+            </button>
             <br />
-          </div>
 
-          <div>
-            <label for="">Image URL</label><br />
-            <input type="text" name="recipe[image]" id="img" required />
-          </div>
-
-          <label>Ingredients: </label>
-          <div class="ingredientList">
-            <input
-              type="text"
-              name="recipe[ingredients][]"
-              id="ingredient"
-              placeholder="ingredient..."
-              required
-            />
-            <br />
-          </div>
-          <button type="button" onclick="addIngredient()">
-            Add Ingredient
-          </button>
-          <br />
-
-          <label for="">Steps: </label>
-          <div class="stepsList">
-            <textarea
-              name="recipe[steps][]"
-              id="step"
-              placeholder="step..."
-              required
-            ></textarea
-            ><br />
-          </div>
-          <button type="button" onclick="addStep()">Add Step</button
-          ><br /><br />
-          <button type="submit">Add Recipe</button>
-        </form>
+            <label for="">Steps: </label>
+            <div class="stepsList">
+              <textarea name="recipe[steps][]" id="step" placeholder="step..." required></textarea><br />
+            </div>
+            <button type="button" onclick="addStep()">Add Step</button><br /><br />
+            <button type="submit">Add Recipe</button>
+         
+          <a href="/recipes">Cancel</a>
+          </form>
+    
+        </div>
       </div>
-
-      <a href="/recipes">Cancel</a>
     </main>
     <script src="/js/recipeNew.js"></script>
-  </body>
+</body>
+
 </html>
