@@ -13,6 +13,7 @@
     <%- include("../partials/navbar.ejs") %>
     <div class="main-recipe-discover-container">
       <div class="recipe-discover-container">
+        <%-include("../partials/flash.ejs")%>
         <main class="container">
           <h1><%= recipe.title %></h1>
           <h2><%= recipe.description %></h2>

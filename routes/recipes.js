@@ -33,6 +33,7 @@ router.post(
   catchAsync(async (req, res, next) => {
     const recipe = new Recipe(req.body.recipe);
     await recipe.save();
+    req.flash("success", "successfully made a new recipe!");
     res.redirect(`/recipes/${recipe._id}`);
   })
 );
@@ -41,6 +42,10 @@ router.get(
   "/:id",
   catchAsync(async (req, res) => {
     const recipe = await Recipe.findById(req.params.id).populate("comments");
+    if (!recipe) {
+      req.flash("error", "cannot find recipe...");
+      return res.redirect("/recipes");
+    }
     res.render("recipes/show", { recipe });
   })
 );
@@ -49,6 +54,10 @@ router.get(
   "/:id/edit",
   catchAsync(async (req, res) => {
     const recipe = await Recipe.findById(req.params.id);
+    if (!recipe) {
+      req.flash("error", "cannot find recipe...");
+      return res.redirect("/recipes");
+    }
     res.render("recipes/edit", { recipe });
   })
 );
@@ -59,6 +68,7 @@ router.put(
   catchAsync(async (req, res) => {
     const { id } = req.params;
     const recipe = await Recipe.findByIdAndUpdate(id, { ...req.body.recipe });
+    req.flash("success", "successfully updated recipe!");
     res.redirect(`/recipes/${recipe._id}`);
   })
 );
@@ -68,6 +78,7 @@ router.delete(
   catchAsync(async (req, res) => {
     const { id } = req.params;
     const recipe = await Recipe.findByIdAndDelete(id);
+    req.flash("success", "successfully deleted comment!");
     res.redirect("/recipes");
   })
 );
