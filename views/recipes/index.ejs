@@ -13,7 +13,7 @@
 
     <div class="main-recipe-discover-container">
       <div class="recipe-discover-container">
-        <% for (let recipe of recipes) { %>
+        <%-include("../partials/flash.ejs")%> <% for (let recipe of recipes) {%>
         <div class="discover-recipe-box">
           <div class="discover-recipe-image">
             <img src="<%= recipe.image %>" alt="image_1" />
