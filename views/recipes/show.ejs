@@ -44,6 +44,39 @@
             <a href="/recipes">All Recipes</a>
             <a href="/recipes/<%= recipe._id %>/edit">Edit</a>
           </div>
+          <hr />
+
+          <div>
+            <h2>Leave a Comment!</h2>
+            <form action="/recipes/<%= recipe._id %>/comments" method="POST">
+              <div>
+                <label for="body">Comment: </label>
+                <textarea
+                  name="comment[body]"
+                  id="body"
+                  cols="30"
+                  rows="3"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit">Submit</button>
+            </form>
+          </div>
+
+          <hr />
+
+          <div class="commentSection">
+            <h2>All Comments</h2>
+            <% for (let comment of recipe.comments) { %>
+            <p><%= comment.body %> <b>- user</b></p>
+            <form
+              action="/recipes/<%= recipe._id %>/comments/<%= comment._id %>?_method=DELETE"
+              method="POST"
+            >
+              <button type="submit">DELETE</button>
+            </form>
+            <% } %>
+          </div>
         </main>
       </div>
     </div>

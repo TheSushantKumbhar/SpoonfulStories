@@ -2,11 +2,12 @@ const express = require("express");
 const path = require("path");
 const mongoose = require("mongoose");
 const Recipe = require("./models/Recipe");
+const Comment = require("./models/Comment");
 const catchAsync = require("./utils/catchAsync");
 const ExpressError = require("./utils/ExpressError");
 const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
-const { recipeSchema } = require("./schemas");
+const { recipeSchema, commentSchema } = require("./schemas");
 
 const port = 8008;
 
@@ -31,6 +32,16 @@ app.use(methodOverride("_method"));
 
 const validateRecipe = (req, res, next) => {
   const { error } = recipeSchema.validate(req.body);
+  if (error) {
+    const message = error.details.map((el) => el.message).join(", ");
+    throw new ExpressError(message, 400);
+  } else {
+    next();
+  }
+};
+
+const validateComment = (req, res, next) => {
+  const { error } = commentSchema.validate(req.body);
   if (error) {
     const message = error.details.map((el) => el.message).join(", ");
     throw new ExpressError(message, 400);
@@ -76,7 +87,7 @@ app.post(
 app.get(
   "/recipes/:id",
   catchAsync(async (req, res) => {
-    const recipe = await Recipe.findById(req.params.id);
+    const recipe = await Recipe.findById(req.params.id).populate("comments");
     res.render("recipes/show", { recipe });
   })
 );
@@ -105,6 +116,29 @@ app.delete(
     const { id } = req.params;
     const recipe = await Recipe.findByIdAndDelete(id);
     res.redirect("/recipes");
+  })
+);
+
+app.post(
+  "/recipes/:id/comments",
+  validateComment,
+  catchAsync(async (req, res) => {
+    const recipe = await Recipe.findById(req.params.id);
+    const comment = new Comment(req.body.comment);
+    recipe.comments.push(comment);
+    await comment.save();
+    await recipe.save();
+    res.redirect(`/recipes/${recipe._id}`);
+  })
+);
+
+app.delete(
+  "/recipes/:id/comments/:commentId",
+  catchAsync(async (req, res) => {
+    const { id, commentId } = req.params;
+    await Recipe.findByIdAndUpdate(id, { $pull: { comments: commentId } });
+    await Comment.findByIdAndDelete(commentId);
+    res.redirect(`/recipes/${id}`);
   })
 );
 
