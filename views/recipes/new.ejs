@@ -13,53 +13,66 @@
 <body>
   <%- include("../partials/navbar.ejs") %>
     <main class="post-container">
-      <!-- <h1>Post your recipe...</h1> -->
-
-
       <div class="main-form-container">
-        <div class="form-Container">
-          <form action="/recipes" method="POST" novalidate>
-            <div>
-              <label for="title">Title</label><br />
-              <input type="text" name="recipe[title]" id="title" required />
-            </div>
 
-            <div>
-              <label for="description">Description</label>
+        <form action="/recipes" method="POST" novalidate>
+          <div class="form-Container">
+            <div class="recipe-form-box1" data-index="0">
+              <div>
+                <label for="title">Title</label><br />
+                <input type="text" name="recipe[title]" id="title" required />
+              </div>
+
+              <div>
+                <label for="description">Description</label>
+                <br />
+                <textarea name="recipe[description]" id="description" rows="5" cols="40" required></textarea>
+                </br>
+              </div>
+            </div>  
+
+            <div class="recipe-form-box2" data-index="1">
+              <div>
+                <label for="">Image URL</label><br />
+                <input type="text" name="recipe[image]" id="img" required />
+              </div>
+
+              <label>Ingredients: </label>
+              <div class="ingredientList">
+                <input type="text" name="recipe[ingredients][]" id="ingredient" placeholder="ingredient..." required />
+                <br />
+              </div>
+              <button type="button" onclick="addIngredient()">
+                Add Ingredient
+              </button>
               <br />
-              <textarea name="recipe[description]" id="description" rows="5" cols="40" required></textarea>
-              </br>
             </div>
 
-            <div>
-              <label for="">Image URL</label><br />
-              <input type="text" name="recipe[image]" id="img" required />
-            </div>
+            <div class="recipe-form-box3" data-index="2">
+              <label for="">Steps: </label>
+              <div class="stepsList">
+                <textarea name="recipe[steps][]" id="step" placeholder="step..." required></textarea><br />
+              </div>
+              <button type="button" onclick="addStep()">Add Step</button><br /><br />
+              <div class="cancel-container">
+              <button type="submit">Add Recipe</button>
 
-            <label>Ingredients: </label>
-            <div class="ingredientList">
-              <input type="text" name="recipe[ingredients][]" id="ingredient" placeholder="ingredient..." required />
-              <br />
+              <a href="/recipes" class="cancel">Cancel</a>
+              </div>
             </div>
-            <button type="button" onclick="addIngredient()">
-              Add Ingredient
-            </button>
-            <br />
-
-            <label for="">Steps: </label>
-            <div class="stepsList">
-              <textarea name="recipe[steps][]" id="step" placeholder="step..." required></textarea><br />
-            </div>
-            <button type="button" onclick="addStep()">Add Step</button><br /><br />
-            <button type="submit">Add Recipe</button>
-         
-          <a href="/recipes">Cancel</a>
-          </form>
-    
-        </div>
+          </div>
+        </form>
       </div>
+
+    
+<div class="slider-buttons">
+  <button id="prevBtn" onclick="prevSlide()">Previous</button>
+  <button id="nextBtn" onclick="nextSlide()">Next</button>
+</div>
+    
     </main>
     <script src="/js/recipeNew.js"></script>
+    <script src="/js/recipeNew2.js"></script>
     <script src="/js/clientSideValidation.js"></script>
 </body>
 
