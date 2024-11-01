@@ -8,9 +8,27 @@
 }
 
 
-.nav{
-    margin-bottom: 30px;
+.poppins-regular {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
+
+
+.montserrat-uniquifier {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+}
+
+
+
+body{
+    background-image: url("/images/postBG3.jpg");
+    background-size: cover;
+}
+
 .post-container {
     display: flex;
     justify-content: center;
@@ -19,8 +37,15 @@
     padding: 5vh 0;
 }
 
+.main-form-container{
+    margin-top: 80px;
+}
+
 .post-container h1 {
-    font-family: "Style Script", cursive;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
     font-size: 3rem;
     text-align: center;
     color: var(--Croissant);
@@ -32,7 +57,7 @@
     justify-content: center;
     align-items: flex-start;
     width: 60vw;
-    overflow: hidden; 
+    overflow: hidden;
     position: relative;
 }
 
@@ -40,26 +65,26 @@
 .recipe-form-box2,
 .recipe-form-box3 {
     width: 100%;
-    min-height: 300px; 
-    height: auto; 
+    min-height: 300px;
+    height: auto;
     padding: 30px;
     box-sizing: border-box;
-    background-color: var(--white);
+    background-color: rgba(255, 255, 255, 0.099);
     border-radius: 15px;
-    border: 1px solid rgba(0, 0, 0, 0.795);
+    /* border: 1px solid rgba(0, 0, 0, 0.795); */
     opacity: 0;
-    transform: translateY(20px); 
+    transform: translateY(20px);
     transition: opacity 0.5s ease, transform 0.5s ease;
-    display: none; 
-    position: absolute; 
-    
+    display: none;
+    position: absolute;
+
 }
 
 .recipe-form-box1.active,
 .recipe-form-box2.active,
 .recipe-form-box3.active {
-    display: block; 
-    position: relative; 
+    display: block;
+    position: relative;
     opacity: 1;
     transform: translateY(0);
     z-index: 1;
@@ -67,8 +92,13 @@
 
 
 label {
-    color: var(--Chocolate);
+    color: var(--white);
     font-weight: bold;
+    font-size: 20px;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
 }
 
 input[type="text"],
@@ -76,25 +106,24 @@ textarea {
     width: 100%;
     padding: 10px;
     margin-top: 8px;
-    border: 1px solid var(--Chocolate);
     border-radius: 8px;
     outline: none;
     font-size: 1rem;
-    color: var(--Chocolate);
-    background-color: #fff8e1;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: var(--white);
+    background-color: #000000a4;
 }
 
 button {
     margin-top: 20px;
     padding: 10px 20px;
     border: none;
-    background-color: var(--Croissant);
+    background-color: #e07325b9;
     color: white;
     font-size: 1rem;
     cursor: pointer;
     border-radius: 8px;
     transition: background-color 0.3s;
+    z-index: 100;
 }
 
 button:hover {
@@ -110,20 +139,34 @@ button:hover {
 .slider-buttons button {
     flex: 1;
     padding: 10px;
-} 
-
-.cancel-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
-.cancel{
+.cancel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.add-recipe{
+    margin: 10px;
+}
+
+.cancel {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
     text-decoration: none;
     text-align: center;
     border-radius: 10px;
     margin: 10px;
-    border: 1px solid black;
     padding: 10px;
-    width: 10vw;
+    width: 8vw;
+    color: white;
+    background-color: #e07325b2;
+}
+
+.invalid-message{
+    color: red ;
 }
