@@ -38,8 +38,9 @@ body{
 }
 
 .main-form-container{
-    margin-top: 80px;
+    margin-top: 50px;
 }
+
 
 .post-container h1 {
     font-family: "Montserrat", sans-serif;
@@ -57,7 +58,7 @@ body{
     justify-content: center;
     align-items: flex-start;
     width: 60vw;
-    overflow: hidden;
+    /* overflow: hidden; */
     position: relative;
 }
 
@@ -170,3 +171,27 @@ button:hover {
 .invalid-message{
     color: red ;
 }
+
+
+.ingredientList, .stepsList {
+    max-height: 200px; 
+    overflow-y: auto; 
+    padding-right: 10px; 
+}
+
+
+.ingredientList::-webkit-scrollbar,
+.stepsList::-webkit-scrollbar {
+    width: 8px;
+    color: black;
+    background-color: black;
+}
+
+.ingredientList::-webkit-scrollbar-thumb,
+.stepsList::-webkit-scrollbar-thumb {
+    background-color: white; 
+    border-radius: 40px;
+    color: black;
+}
+
+

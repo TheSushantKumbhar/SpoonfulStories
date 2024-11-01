@@ -331,7 +331,7 @@ nav {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--SourDough);
+  background: rgba(255, 255, 255, 0.017);
 }
 
 ::-webkit-scrollbar-thumb {
