@@ -63,13 +63,6 @@ nav {
   /* box-shadow: 0px 3px 3px 2px rgb(0 0 0 / 38%); */
 }
 
-.website-name {
-  font-family: "Style Script", cursive;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 40px;
-}
-
 .nav-links {
   display: flex;
   gap: 20px;

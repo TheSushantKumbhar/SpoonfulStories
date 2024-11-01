@@ -25,7 +25,7 @@
 
 
 body{
-    background-image: url("/images/postBG3.jpg");
+    background-image: url("/images/postBG1.png");
     background-size: cover;
 }
 
@@ -70,7 +70,7 @@ body{
     height: auto;
     padding: 30px;
     box-sizing: border-box;
-    background-color: rgba(255, 255, 255, 0.099);
+    background-color: rgba(255, 255, 255, 0.372);
     border-radius: 15px;
     /* border: 1px solid rgba(0, 0, 0, 0.795); */
     opacity: 0;
@@ -112,6 +112,7 @@ textarea {
     font-size: 1rem;
     color: var(--white);
     background-color: #000000a4;
+    border: none;
 }
 
 button {
@@ -133,7 +134,7 @@ button:hover {
 
 .slider-buttons {
     margin-top: 20px;
-    display: flex;
+    /* display: flex; */
     gap: 10px;
 }
 

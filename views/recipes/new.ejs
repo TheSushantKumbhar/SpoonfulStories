@@ -1,35 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Recipe</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/recipesCss/recipe_new.css" />
+    <%- include("../partials/fonts.ejs") %>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>New Recipe</title>
-  <link rel="stylesheet" href="/css/style.css" />
-  <link rel="stylesheet" href="/css/recipesCss/recipe_new.css" />
-  <%- include("../partials/fonts.ejs") %>
-</head>
-
-<body>
-  <%- include("../partials/navbar.ejs") %>
+  <body>
+    <%- include("../partials/navbar.ejs") %>
     <main class="post-container">
       <div class="main-form-container">
-
-        <form action="/recipes" method="POST" >
+        <form action="/recipes" method="POST">
           <div class="form-Container">
             <div class="recipe-form-box1" data-index="0">
               <div>
                 <label for="title">Title</label><br />
-                <input type="text" id="text-input" name="recipe[title]" id="title" required/>
+                <input
+                  type="text"
+                  id="text-input"
+                  name="recipe[title]"
+                  id="title"
+                  required
+                />
               </div>
 
               <div>
                 <label for="description">Description</label>
                 <br />
-                <textarea name="recipe[description]" id="description" rows="5" cols="40" required></textarea>
-                <br/>
+                <textarea
+                  name="recipe[description]"
+                  id="description"
+                  rows="5"
+                  cols="40"
+                  required
+                ></textarea>
+                <br />
               </div>
-            </div>  
+            </div>
 
             <div class="recipe-form-box2" data-index="1">
               <div>
@@ -39,7 +49,13 @@
 
               <label>Ingredients: </label>
               <div class="ingredientList">
-                <input type="text" name="recipe[ingredients][]" id="ingredient" placeholder="ingredient..." required />
+                <input
+                  type="text"
+                  name="recipe[ingredients][]"
+                  id="ingredient"
+                  placeholder="ingredient..."
+                  required
+                />
                 <br />
               </div>
               <button type="button" onclick="addIngredient()">
@@ -51,29 +67,32 @@
             <div class="recipe-form-box3" data-index="2">
               <label for="">Steps: </label>
               <div class="stepsList">
-                <textarea name="recipe[steps][]" id="step" placeholder="step..." required></textarea><br />
+                <textarea
+                  name="recipe[steps][]"
+                  id="step"
+                  placeholder="step..."
+                  required
+                ></textarea
+                ><br />
               </div>
-              <button type="button" onclick="addStep()">Add Step</button><br /><br />
+              <button type="button" onclick="addStep()">Add Step</button
+              ><br /><br />
               <div class="cancel-container">
-              <button type="submit" class="add-recipe">Add Recipe</button>
-
-              <a href="/recipes" class="cancel">Cancel</a>
+                <button type="submit" class="add-recipe">Add Recipe</button>
               </div>
             </div>
           </div>
         </form>
       </div>
 
-    
-<div class="slider-buttons">
-  <button id="prevBtn" onclick="prevSlide()">Previous</button>
-  <button id="nextBtn" onclick="nextSlide()">Next</button>
-</div>
-    
+      <div class="slider-buttons">
+        <button id="prevBtn" onclick="prevSlide()">Previous</button>
+        <button id="nextBtn" onclick="nextSlide()">Next</button>
+        <a href="/recipes" class="cancel">Cancel</a>
+      </div>
     </main>
     <script src="/js/recipeNew.js"></script>
     <script src="/js/recipeNew2.js"></script>
     <!-- <script src="/js/clientSideValidation.js"></script> -->
-</body>
-
+  </body>
 </html>
