@@ -3,6 +3,10 @@ const Schema = mongoose.Schema;
 const passportLocalMongoose = require("passport-local-mongoose");
 
 const UserSchmea = new Schema({
+  fullName: {
+    type: String,
+    required: [true, "name cannot be blank"],
+  },
   email: {
     type: String,
     required: [true, "email cannot be blank"],

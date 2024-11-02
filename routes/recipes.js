@@ -4,6 +4,7 @@ const catchAsync = require("../utils/catchAsync");
 const ExpressError = require("../utils/ExpressError");
 const Recipe = require("../models/Recipe");
 const { recipeSchema } = require("../schemas");
+const { isLoggedIn } = require("../middlware");
 
 const validateRecipe = (req, res, next) => {
   const { error } = recipeSchema.validate(req.body);
@@ -23,12 +24,13 @@ router.get(
   })
 );
 
-router.get("/new", (req, res) => {
+router.get("/new", isLoggedIn, (req, res) => {
   res.render("recipes/new");
 });
 
 router.post(
   "/",
+  isLoggedIn,
   validateRecipe,
   catchAsync(async (req, res, next) => {
     const recipe = new Recipe(req.body.recipe);
@@ -52,6 +54,7 @@ router.get(
 
 router.get(
   "/:id/edit",
+  isLoggedIn,
   catchAsync(async (req, res) => {
     const recipe = await Recipe.findById(req.params.id);
     if (!recipe) {
@@ -64,6 +67,7 @@ router.get(
 
 router.put(
   "/:id",
+  isLoggedIn,
   validateRecipe,
   catchAsync(async (req, res) => {
     const { id } = req.params;
@@ -75,6 +79,7 @@ router.put(
 
 router.delete(
   "/:id",
+  isLoggedIn,
   catchAsync(async (req, res) => {
     const { id } = req.params;
     const recipe = await Recipe.findByIdAndDelete(id);

@@ -6,37 +6,38 @@
     <title>Document</title>
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/login.css" />
-    <%- include("partials/fonts.ejs") %>
+    <%- include("../partials/fonts.ejs") %>
     <!-- <script src="/js/login.js"></script>   -->
   </head>
   <body>
-    <%- include("partials/navbar.ejs") %>
+    <%- include("../partials/navbar.ejs") %>
 
-    <div class="flexContainer" >
+    <div class="flexContainer">
       <div class="container">
         <h2>Welcome Back!!!</h2>
+        <%- include("../partials/flash.ejs") %>
         <div id="login">
           <h3>Login</h3>
-          <form action="#" method="post">
+          <form action="/login" method="POST">
             <input
               type="text"
+              id="username"
               name="username"
               placeholder="Username"
               required
             />
             <input
               type="password"
+              id="password"
               name="password"
               placeholder="Password"
               required
             />
-            <input type="submit" value="Login" />
-          <a class="signUp" href="/signup">Sign Up</a>
+            <button type="submit">Login</button>
+            <a class="signUp" href="/signup">Sign Up</a>
+          </form>
         </div>
       </div>
     </div>
-  
   </body>
 </html>
-
-

@@ -63,7 +63,7 @@ input {
 input[type="text"],
 input[type="password"],
 input[type="email"],
-input[type="submit"] {
+button[type="submit"] {
     width: calc(100% - 20px);
     padding: 10px;
     margin: 10px 0;
@@ -73,14 +73,14 @@ input[type="submit"] {
     outline: none;
 }
 
-input[type="submit"] {
+button[type="submit"] {
     background-color: var(--Croissant);
     color: #fff;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-input[type="submit"]:hover {
+button[type="submit"]:hover {
     background-color: var(--Chocolate);
 }
 
