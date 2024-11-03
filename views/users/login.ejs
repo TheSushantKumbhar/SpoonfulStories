@@ -6,16 +6,16 @@
     <title>Document</title>
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/login.css" />
+    <link rel="stylesheet" href="/css/flash.css" />
     <%- include("../partials/fonts.ejs") %>
     <!-- <script src="/js/login.js"></script>   -->
   </head>
   <body>
-    <%- include("../partials/navbar.ejs") %>
-
+    <%- include("../partials/navbar.ejs") %> <%-
+    include("../partials/flash.ejs") %>
     <div class="flexContainer">
       <div class="container">
         <h2>Welcome Back!!!</h2>
-        <%- include("../partials/flash.ejs") %>
         <div id="login">
           <h3>Login</h3>
           <form action="/login" method="POST">
@@ -39,5 +39,7 @@
         </div>
       </div>
     </div>
+
+    <script src="/js/flash.js"></script>
   </body>
 </html>

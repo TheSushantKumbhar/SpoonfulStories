@@ -6,14 +6,15 @@
     <title>All Recipes</title>
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/recipesCss/recipe_index.css" />
+    <link rel="stylesheet" href="/css/flash.css" />
     <%- include("../partials/fonts.ejs") %>
   </head>
   <body>
     <%- include("../partials/navbar.ejs") %>
-
+    <%-include("../partials/flash.ejs")%>
     <div class="main-recipe-discover-container">
       <div class="recipe-discover-container">
-        <%-include("../partials/flash.ejs")%> <% for (let recipe of recipes) {%>
+        <% for (let recipe of recipes) {%>
         <div class="discover-recipe-box">
           <div class="discover-recipe-image">
             <img src="<%= recipe.image %>" alt="image_1" />
@@ -31,5 +32,7 @@
         <% } %>
       </div>
     </div>
+
+    <script src="/js/flash.js"></script>
   </body>
 </html>

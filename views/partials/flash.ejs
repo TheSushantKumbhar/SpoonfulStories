@@ -1,5 +1,21 @@
-<% if (success && success.length) {%>
-<div role="alert" class="flashContainer"><%= success %></div>
-<% } if (error && error.length) {%>
-<div role="alert" class="flashContainer"><%= error %></div>
+<% if (success && success.length) { %>
+<div
+  class="alert"
+  role="alert"
+  style="background-color: rgba(34, 128, 0, 0.471)"
+  id="alertBox"
+>
+  <span class="close-btn" onclick="dismissAlert()">&times;</span>
+  <%= success %>
+</div>
+<% } %> <% if (error && error.length) { %>
+<div
+  class="alert"
+  role="alert"
+  style="background-color: rgba(255, 0, 0, 0.454)"
+  id="alertBox"
+>
+  <span class="close-btn" onclick="dismissAlert()">&times;</span>
+  <%= error %>
+</div>
 <% } %>

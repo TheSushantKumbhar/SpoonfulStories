@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/login.css" />
     <link rel="stylesheet" href="/css/preloader.css" />
+    <link rel="stylesheet" href="/css/flash.css" />
     <!-- javascript  -->
     <script src="/js/rotate.js"></script>
     <script src="/js/login.js"></script>
@@ -22,9 +23,8 @@
     <div id="preloader">
       <h1 class="preloader-text">Spoonful Stories</h1>
     </div>
-
     <div class="header">
-      <%- include("partials/navbar.ejs") %>
+      <%- include("partials/navbar.ejs") %> <%- include("partials/flash.ejs") %>
 
       <div class="logoContainer">
         <div class="logo">
@@ -83,5 +83,7 @@
     <div class="explore">
       <div class="sectionLine"></div>
     </div>
+
+    <script src="/js/flash.js"></script>
   </body>
 </html>
