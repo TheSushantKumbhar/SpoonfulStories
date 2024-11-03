@@ -3,14 +3,20 @@ const router = express.Router({ mergeParams: true });
 const catchAsync = require("../utils/catchAsync");
 const Recipe = require("../models/Recipe");
 const Comment = require("../models/Comment");
-const { validateComment } = require("../middlware");
+const {
+  validateComment,
+  isLoggedIn,
+  isCommentAuthor,
+} = require("../middlware");
 
 router.post(
   "/",
+  isLoggedIn,
   validateComment,
   catchAsync(async (req, res) => {
     const recipe = await Recipe.findById(req.params.id);
     const comment = new Comment(req.body.comment);
+    comment.author = req.user._id;
     recipe.comments.push(comment);
     await comment.save();
     await recipe.save();
@@ -21,6 +27,8 @@ router.post(
 
 router.delete(
   "/:commentId",
+  isLoggedIn,
+  isCommentAuthor,
   catchAsync(async (req, res) => {
     const { id, commentId } = req.params;
     await Recipe.findByIdAndUpdate(id, { $pull: { comments: commentId } });

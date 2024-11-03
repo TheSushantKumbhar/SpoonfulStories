@@ -33,8 +33,14 @@ router.get(
   "/:id",
   catchAsync(async (req, res) => {
     const recipe = await Recipe.findById(req.params.id)
-      .populate("comments")
+      .populate({
+        path: "comments",
+        populate: {
+          path: "author",
+        },
+      })
       .populate("author");
+    console.log(recipe);
     if (!recipe) {
       req.flash("error", "cannot find recipe...");
       return res.redirect("/recipes");

@@ -56,6 +56,7 @@
           <div class="comment-container">
             <div>
               <h2>Leave a Comment!</h2>
+              <% if (currentUser) { %>
               <form action="/recipes/<%= recipe._id %>/comments" method="POST">
                 <div>
                   <label for="body">Comment: </label>
@@ -69,19 +70,22 @@
                 </div>
                 <button type="submit">Submit</button>
               </form>
+              <% } else { %>
+              <p>you must be logged in to make a comment!</p>
+              <% } %>
             </div>
-
             <div class="commentSection">
               <h2>All Comments</h2>
               <% for (let comment of recipe.comments) { %>
-              <p><%= comment.body %> <b>- user</b></p>
+              <p><%= comment.author.username %>: <%= comment.body %></p>
+              <% if (currentUser && comment.author.equals(currentUser._id)) { %>
               <form
                 action="/recipes/<%= recipe._id %>/comments/<%= comment._id %>?_method=DELETE"
                 method="POST"
               >
                 <button type="submit">DELETE</button>
               </form>
-              <% } %>
+              <% } %> <% } %>
             </div>
           </div>
         </div>

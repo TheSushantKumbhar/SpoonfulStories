@@ -1,6 +1,7 @@
 const { recipeSchema, commentSchema } = require("./schemas");
 const ExpressError = require("./utils/ExpressError");
 const Recipe = require("./models/Recipe");
+const Comment = require("./models/Comment");
 
 module.exports.isLoggedIn = (req, res, next) => {
   if (!req.isAuthenticated()) {
@@ -47,4 +48,14 @@ module.exports.validateComment = (req, res, next) => {
   } else {
     next();
   }
+};
+
+module.exports.isCommentAuthor = async (req, res, next) => {
+  const { id, commentId } = req.params;
+  const comment = await Comment.findById(commentId);
+  if (!comment.author.equals(req.user._id)) {
+    req.flash("error", "you donot have permission to do that!");
+    return res.redirect(`/recipes/${id}`);
+  }
+  next();
 };
