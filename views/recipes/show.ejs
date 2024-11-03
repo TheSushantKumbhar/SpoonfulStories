@@ -20,6 +20,7 @@
           <div class="sub-container">
             <h1><%= recipe.title %></h1>
             <h2><%= recipe.description %></h2>
+            <h3>- <%= recipe.author.username %></h3>
 
             <img src="<%= recipe.image %>" alt="image" />
 
@@ -41,15 +42,16 @@
               action="/recipes/<%= recipe._id %>?_method=DELETE"
               method="POST"
             >
+              <% if (currentUser && recipe.author.equals(currentUser._id)) { %>
               <button>Delete</button>
+              <a href="/recipes/<%= recipe._id %>/edit">Edit</a>
+              <% } %>
             </form>
 
             <div class="options">
               <a href="/recipes">All Recipes</a>
-              <a href="/recipes/<%= recipe._id %>/edit">Edit</a>
             </div>
           </div>
-
 
           <div class="comment-container">
             <div>
@@ -82,7 +84,6 @@
               <% } %>
             </div>
           </div>
-          
         </div>
       </div>
     </div>
