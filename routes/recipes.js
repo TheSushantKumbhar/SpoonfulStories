@@ -1,20 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const catchAsync = require("../utils/catchAsync");
-const ExpressError = require("../utils/ExpressError");
 const Recipe = require("../models/Recipe");
-const { recipeSchema } = require("../schemas");
-const { isLoggedIn } = require("../middlware");
-
-const validateRecipe = (req, res, next) => {
-  const { error } = recipeSchema.validate(req.body);
-  if (error) {
-    const message = error.details.map((el) => el.message).join(", ");
-    throw new ExpressError(message, 400);
-  } else {
-    next();
-  }
-};
+const { isLoggedIn, isAuthor, validateRecipe } = require("../middlware");
 
 router.get(
   "/",
@@ -34,6 +22,7 @@ router.post(
   validateRecipe,
   catchAsync(async (req, res, next) => {
     const recipe = new Recipe(req.body.recipe);
+    recipe.author = req.user._id;
     await recipe.save();
     req.flash("success", "successfully made a new recipe!");
     res.redirect(`/recipes/${recipe._id}`);
@@ -43,7 +32,9 @@ router.post(
 router.get(
   "/:id",
   catchAsync(async (req, res) => {
-    const recipe = await Recipe.findById(req.params.id).populate("comments");
+    const recipe = await Recipe.findById(req.params.id)
+      .populate("comments")
+      .populate("author");
     if (!recipe) {
       req.flash("error", "cannot find recipe...");
       return res.redirect("/recipes");
@@ -55,8 +46,10 @@ router.get(
 router.get(
   "/:id/edit",
   isLoggedIn,
+  isAuthor,
   catchAsync(async (req, res) => {
-    const recipe = await Recipe.findById(req.params.id);
+    const { id } = req.params;
+    const recipe = await Recipe.findById(id);
     if (!recipe) {
       req.flash("error", "cannot find recipe...");
       return res.redirect("/recipes");
@@ -68,6 +61,7 @@ router.get(
 router.put(
   "/:id",
   isLoggedIn,
+  isAuthor,
   validateRecipe,
   catchAsync(async (req, res) => {
     const { id } = req.params;
@@ -80,6 +74,7 @@ router.put(
 router.delete(
   "/:id",
   isLoggedIn,
+  isAuthor,
   catchAsync(async (req, res) => {
     const { id } = req.params;
     const recipe = await Recipe.findByIdAndDelete(id);

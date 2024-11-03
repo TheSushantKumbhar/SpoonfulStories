@@ -8,6 +8,10 @@ const RecipeSchema = new Schema({
   ingredients: Array,
   steps: Array,
   image: String,
+  author: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
+  },
   comments: [
     {
       type: Schema.Types.ObjectId,

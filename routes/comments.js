@@ -3,18 +3,7 @@ const router = express.Router({ mergeParams: true });
 const catchAsync = require("../utils/catchAsync");
 const Recipe = require("../models/Recipe");
 const Comment = require("../models/Comment");
-const ExpressError = require("../utils/ExpressError");
-const { commentSchema } = require("../schemas");
-
-const validateComment = (req, res, next) => {
-  const { error } = commentSchema.validate(req.body);
-  if (error) {
-    const message = error.details.map((el) => el.message).join(", ");
-    throw new ExpressError(message, 400);
-  } else {
-    next();
-  }
-};
+const { validateComment } = require("../middlware");
 
 router.post(
   "/",
