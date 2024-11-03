@@ -7,28 +7,61 @@
     --black: black;
 }
 
-.container {
-    width: 80vw;
+.main-recipe-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.container > img {
+.recipe-container{
+  height: auto;
+  width: auto;
+  margin-top: 100px;
+  background-color: black;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.recipe-sub-container {
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sub-container{
+  height: 80vh;
+  background-color: white;
+  /* border-radius: 20px; */
+  overflow-y: scroll;
+}
+.sub-container > img {
     height: 30vh;
     width: auto;
     padding: 20px;
 }
 
-.container > form {
+.sub-container > form {
     padding: 20px;
 }
 
-.container > h1, h2, h3 {
+.sub-container > h1, h2, h3 {
     padding: 0 20px;
+    text-align: center;
 }
 
-.container > ul, ol {
+.sub-container > ul, ol {
     padding: 30px;
+    list-style: none;
 }
 
 .options {
     padding: 20px;
+}
+
+.comment-container{
+  height: 80vh;
+  width: 30vw;
+  overflow-y: scroll;
+  background-color: white;
 }
