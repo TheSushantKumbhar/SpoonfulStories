@@ -12,12 +12,11 @@
 
   <body>
     <%- include("../partials/navbar.ejs") %>
-
     <div class="main-recipe-container">
       <div class="recipe-container">
-        <%-include("../partials/flash.ejs")%>
         <div class="recipe-sub-container">
           <div class="sub-container">
+            <%-include("../partials/flash.ejs")%>
             <h1><%= recipe.title %></h1>
             <h2><%= recipe.description %></h2>
             <h3>- <%= recipe.author.username %></h3>
@@ -60,13 +59,7 @@
               <form action="/recipes/<%= recipe._id %>/comments" method="POST">
                 <div>
                   <label for="body">Comment: </label>
-                  <textarea
-                    name="comment[body]"
-                    id="body"
-                    cols="30"
-                    rows="3"
-                    required
-                  ></textarea>
+                  <input type="text" name="comment[body]" id="body" />
                 </div>
                 <button type="submit">Submit</button>
               </form>
