@@ -40,6 +40,7 @@ router.get(
         },
       })
       .populate("author");
+    console.log("hello world");
     console.log(recipe);
     if (!recipe) {
       req.flash("error", "cannot find recipe...");
