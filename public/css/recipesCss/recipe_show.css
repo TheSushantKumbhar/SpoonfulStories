@@ -62,13 +62,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transform: rotate(0deg) translateX(51vw) translateY(-107vh);
+  transform: rotate(0deg) translateX(50vw) translateY(-107vh);
   overflow-x: hidden;
 }
 
 .icon-circle {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   background-color: var(--Croissant);
   border-radius: 50%;
   display: flex;
@@ -86,26 +86,63 @@
   fill: #ffffff; 
 }
 
-.icon6 { transform: translateX(50vw) translateY(-190vh); }
+/* .icon6 { transform: translateX(50vw) translateY(-190vh); }
 .icon2 {  transform: translateX(54vw) translateY(-138vh); }
 .icon5 {  transform: translateX(62vw) translateY(-149vh); }
 .icon4 { transform: translateX(50vw) translateY(-193vh);  }
 .icon3 {  transform: translateX(84vw) translateY(-136vh); }
-.icon1 {  transform: translateX(74vw) translateY(-112vh);  }
+.icon1 {  transform: translateX(74vw) translateY(-112vh);  } */
 
+
+/* .icon6 { transform: translateX(50vw) translateY(-100vh); } */
+.icon2 {  transform: translateX(65vw) translateY(-107vh); }
+.icon5 {  transform: translateX(57vw) translateY(-128vh); }
+.icon4 { transform: translateX(50vw) translateY(-121vh);  }
+.icon3 {  transform: translateX(80vw) translateY(-114vh); }
+.icon1 {  transform: translateX(72vw) translateY(-100vh);  }
 
 .sub-container > form {
     padding: 20px;
 }
 
 .sub-container > h1, h2, h3 {
-    padding: 20px;
-    text-align: center;
+    padding: 10px 20px;
+    text-align: left;
+}
+
+.sub-container>h1{
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 42px;
+}
+
+.sub-container>h2{
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 28px;
+}
+
+.sub-container>h3{
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 20px;
 }
 
 .sub-container > ul, ol {
-    padding: 30px;
+    padding: 10px 30px;
     list-style: none;
+    text-align: left;
+    font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
 }
 
 
@@ -127,15 +164,24 @@
   transform: translateX(1vw) translateY(1vh);
 }
 
+.steps > h3{
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 20px;
+}
+
 .comment-container{
   height: 56vh;
   width: 30vw;
   background-color: white;
-  border: 2px solid black;
+  border: 1px solid black;
   border-radius: 20px;
   position: absolute;
   top: 2vh;
   right: -42vw;
+  margin-top: 120px;
 }
 
 .submit-comment{
