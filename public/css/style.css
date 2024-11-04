@@ -55,6 +55,7 @@ header {
 
 nav {
   background-color: var(--Golden);
+  /* background-color: var(--black); */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -196,6 +197,10 @@ nav {
   height: 100vh;
   width: 100%;
   background-size: cover;
+}
+
+.website-name{
+    margin-right: 150px;
 }
 
 .logo {

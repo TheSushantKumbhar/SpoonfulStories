@@ -8,45 +8,98 @@
 }
 
 .main-recipe-container{
-  display: flex;
+  /* display: flex;    
   justify-content: center;
-  align-items: center;
+  align-items: center; */
+  overflow-x: hidden;
+  height: 100vh;
 }
 
 .recipe-container{
-  height: auto;
+  height: 100vh;
   width: auto;
   margin-top: 100px;
-  background-color: black;
+  background-color: rgb(255, 255, 255);
   padding: 20px;
   border-radius: 20px;
+  top: 20%;
+  bottom: 20%;
 }
 
 .recipe-sub-container {
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 10vh;
+    width: auto;
 }
 
 .sub-container{
   height: 80vh;
   background-color: white;
   /* border-radius: 20px; */
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
+  transform: translateX(-7vw) translateY(-3vh);
+  width: 50vw;
 }
-.sub-container > img {
-    height: 30vh;
-    width: auto;
-    padding: 20px;
+.circle-container {
+  width: 620px;
+  height: 620px;
+  border-radius: 50%;
+  overflow: hidden;
+  transform:rotate(0deg) translateX(-1px) translateY(1px);
 }
+
+.circle-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow-x: hidden;
+}
+
+.yellow-background {
+  width: 650px; 
+  height: 650px;
+  background-color: var(--Chocolate);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(0deg) translateX(51vw) translateY(-107vh);
+  overflow-x: hidden;
+}
+
+.icon-circle {
+  width: 60px;
+  height: 60px;
+  background-color: var(--Croissant);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* position: absolute; */
+  color: #ffffff;
+}
+
+.icon1{
+  color: white;
+}
+
+.icon-circle svg path {
+  fill: #ffffff; 
+}
+
+.icon6 { transform: translateX(50vw) translateY(-190vh); }
+.icon2 {  transform: translateX(54vw) translateY(-138vh); }
+.icon5 {  transform: translateX(62vw) translateY(-149vh); }
+.icon4 { transform: translateX(50vw) translateY(-193vh);  }
+.icon3 {  transform: translateX(84vw) translateY(-136vh); }
+.icon1 {  transform: translateX(74vw) translateY(-112vh);  }
+
 
 .sub-container > form {
     padding: 20px;
 }
 
 .sub-container > h1, h2, h3 {
-    padding: 0 20px;
+    padding: 20px;
     text-align: center;
 }
 
@@ -55,13 +108,88 @@
     list-style: none;
 }
 
+
+.username{
+  padding: 10px;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 25px;
+  margin-bottom: 20px;
+}
 .options {
     padding: 20px;
 }
 
-.comment-container{
-  height: 80vh;
-  width: 30vw;
-  overflow-y: scroll;
-  background-color: white;
+
+.steps{
+  transform: translateX(1vw) translateY(1vh);
 }
+
+.comment-container{
+  height: 56vh;
+  width: 30vw;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 20px;
+  position: absolute;
+  top: 2vh;
+  right: -42vw;
+}
+
+.submit-comment{
+  padding: 10px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.all-comments{
+  height: auto;
+  max-height:43vh ;
+  overflow-y: auto;
+  scrollbar-color: black;
+  padding: 10px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 20px;
+}
+
+
+.all-comments::-webkit-scrollbar-thumb {
+  background-color: rgb(255, 255, 255);
+  color: black;
+}
+
+.sub-container::-webkit-scrollbar-thumb {
+  background-color: rgb(255, 255, 255);
+  color: black;
+}
+
+
+.commentSection{
+  height: 40vh;
+}
+
+.comment-text{
+  height: 40px;
+  width: 250px;
+  border-radius: 30px;
+}
+
+
+.postbutton{
+  border-radius: 30px;
+  border: none;
+  padding: 10px 30px;
+  background-color: #2d2b2b80;
+}
+
+.comment{
+  padding-top: 4px;
+} 
+
