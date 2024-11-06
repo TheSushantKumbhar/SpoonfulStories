@@ -4,56 +4,22 @@ const passport = require("passport");
 const User = require("../models/User");
 const catchAsync = require("../utils/catchAsync");
 const { storeReturnTo } = require("../middlware");
+const users = require("../controllers/users");
 
-router.get("/signup", (req, res) => {
-  res.render("users/signup");
-});
+router.route("/signup").get(users.renderSignup).post(catchAsync(users.signup));
 
-router.post(
-  "/signup",
-  catchAsync(async (req, res, next) => {
-    try {
-      const { fullName, email, username, password } = req.body;
-      const user = new User({ fullName, email, username });
-      const registeredUser = await User.register(user, password);
-      req.login(registeredUser, (err) => {
-        if (err) return next(err);
-        req.flash("success", "welcome to spoonful stories");
-        res.redirect("/recipes");
-      });
-    } catch (e) {
-      req.flash("error", e.message);
-      res.redirect("/signup");
-    }
-  })
-);
+router
+  .route("/login")
+  .get(users.renderLogin)
+  .post(
+    storeReturnTo,
+    passport.authenticate("local", {
+      failureFlash: true,
+      failureRedirect: "/login",
+    }),
+    users.login
+  );
 
-router.get("/login", (req, res) => {
-  res.render("users/login");
-});
-
-router.post(
-  "/login",
-  storeReturnTo,
-  passport.authenticate("local", {
-    failureFlash: true,
-    failureRedirect: "/login",
-  }),
-  (req, res) => {
-    req.flash("success", "welcome back!!!");
-    const redirectUrl = res.locals.returnTo || "/recipes";
-    res.redirect(redirectUrl);
-  }
-);
-
-router.get("/logout", (req, res, next) => {
-  req.logout(function (err) {
-    if (err) {
-      return next(err);
-    }
-  });
-  req.flash("success", "goodbye !");
-  res.redirect("/");
-});
+router.get("/logout", users.logout);
 
 module.exports = router;
