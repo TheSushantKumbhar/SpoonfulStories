@@ -557,6 +557,6 @@ main {
 
 
 .explore {
-  background: radial-gradient(#ffc229, #ffffff);
+  background-color: white;
   height: 100vh;
 }
