@@ -229,7 +229,7 @@ button:nth-child(1) {
   height: 620px;
   border-radius: 50%;
   overflow: hidden;
-  transform: rotate(0deg) translateX(-4vw) translateY(-4vh);
+  transform: rotate(0deg) translateX(0vw) translateY(0vh);
 }
 
 .circle-container img {
