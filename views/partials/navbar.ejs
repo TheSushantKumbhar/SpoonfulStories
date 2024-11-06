@@ -54,14 +54,15 @@
       <% } else { %>
       <div class="profileIcon">
         <div style="position: relative">
-          <div class="profile-icon" onclick="toggleProfileDropdown()">P</div>
+          <div class="profile-icon" onclick="toggleProfileDropdown()">
+            <%= currentUser.username[0].toUpperCase() %>
+          </div>
 
           <div class="profile-dropdown" id="profileDropdown">
             <div class="profile-info">
-              <div class="account-name">John Doe</div>
-              <div class="followers">Followers: 150</div>
+              <div class="account-name"><%= currentUser.username %></div>
             </div>
-            <div class="logout-button" > <a href="/logout">Log Out </a> </div>
+            <div class="logout-button"><a href="/logout">Log Out </a></div>
           </div>
         </div>
       </div>
@@ -71,4 +72,3 @@
 </header>
 
 <script src="/js/profileicon.js"></script>
-
