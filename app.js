@@ -71,6 +71,10 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
+app.get("/temp", (req, res) => {
+  res.render("temp/showRecipe.ejs");
+});
+
 app.all("*", (req, res, next) => {
   next(new ExpressError("Page Not Found!", 404));
 });
