@@ -25,4 +25,7 @@ router.get(
   catchAsync(recipes.renderEditForm)
 );
 
+router.get("/:id/like", isLoggedIn, recipes.likeRecipe);
+router.get("/:id/dislike", isLoggedIn, recipes.dislikeRecipe);
+
 module.exports = router;

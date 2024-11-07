@@ -85,16 +85,38 @@
           <div class="button-container">
             <!-- Like Button -->
             <div class="button" id="like-button">
-              <div class="circle">
-                <svg viewBox="0 0 24 24">
+              <a class="circle" href="/recipes/<%= recipe._id %>/like">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="24px"
+                  viewBox="0 -960 960 960"
+                  width="24px"
+                  fill="#e8eaed"
+                >
                   <path
-                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                    d="M720-120H280v-520l280-280 50 50q7 7 11.5 19t4.5 23v14l-44 174h258q32 0 56 24t24 56v80q0 7-2 15t-4 15L794-168q-9 20-30 34t-44 14Zm-360-80h360l120-280v-80H480l54-220-174 174v406Zm0-406v406-406Zm-80-34v80H160v360h120v80H80v-520h200Z"
                   />
                 </svg>
-              </div>
-              <p class="count">123</p>
+              </a>
+              <p class="count"><%= recipe.likes.length %></p>
             </div>
-
+            <!-- Dislike Button -->
+            <div class="button" id="like-button">
+              <a class="circle" href="/recipes/<%= recipe._id %>/dislike">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="24px"
+                  viewBox="0 -960 960 960"
+                  width="24px"
+                  fill="#e8eaed"
+                >
+                  <path
+                    d="M240-840h440v520L400-40l-50-50q-7-7-11.5-19t-4.5-23v-14l44-174H120q-32 0-56-24t-24-56v-80q0-7 2-15t4-15l120-282q9-20 30-34t44-14Zm360 80H240L120-480v80h360l-54 220 174-174v-406Zm0 406v-406 406Zm80 34v-80h120v-360H680v-80h200v520H680Z"
+                  />
+                </svg>
+              </a>
+              <p class="count"><%= recipe.dislikes.length %></p>
+            </div>
             <!-- Share Button -->
             <div class="button" id="share-button">
               <div class="circle">

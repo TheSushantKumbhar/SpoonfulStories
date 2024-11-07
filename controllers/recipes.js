@@ -58,3 +58,33 @@ module.exports.deleteRecipe = async (req, res) => {
   req.flash("success", "successfully deleted comment!");
   res.redirect("/recipes");
 };
+
+module.exports.likeRecipe = async (req, res) => {
+  const { id } = req.params;
+  const recipe = await Recipe.findById(id);
+  const dislikeIndex = recipe.likes.indexOf(req.user._id);
+  if (!recipe.likes.includes(req.user._id)) {
+    recipe.likes.push(req.user._id);
+    recipe.dislikes.splice(dislikeIndex, 1);
+    await recipe.save();
+    req.flash("success", "recipe liked!");
+  } else {
+    req.flash("error", "recipe already liked");
+  }
+  res.redirect(`/recipes/${recipe._id}`);
+};
+
+module.exports.dislikeRecipe = async (req, res) => {
+  const { id } = req.params;
+  const recipe = await Recipe.findById(id);
+  const likeIndex = recipe.likes.indexOf(req.user._id);
+  if (!recipe.dislikes.includes(req.user._id)) {
+    recipe.dislikes.push(req.user._id);
+    recipe.likes.splice(likeIndex, 1);
+    await recipe.save();
+    req.flash("success", "recipe disliked!");
+  } else {
+    req.flash("error", "recipe already disliked");
+  }
+  res.redirect(`/recipes/${recipe._id}`);
+};

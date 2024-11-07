@@ -18,6 +18,18 @@ const RecipeSchema = new Schema({
       ref: "Comment",
     },
   ],
+  likes: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "User",
+    },
+  ],
+  dislikes: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "User",
+    },
+  ],
 });
 
 RecipeSchema.post("findOneAndDelete", async function (doc) {
