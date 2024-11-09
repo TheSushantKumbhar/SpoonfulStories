@@ -40,8 +40,6 @@ body {
   /* background: radial-gradient(#ffc229bd, #ffffffa7); */
 }
 
-
-
 .logom {
   background-color: black;
   height: 3rem;
@@ -222,7 +220,7 @@ nav {
   padding: 20px;
   z-index: 10;
   transform-origin: top right;
-  animation: slideDown 0.2s ease-out;
+  animation: slideDown 1.2s ease-out;
 }
 
 .profile-dropdown::before {

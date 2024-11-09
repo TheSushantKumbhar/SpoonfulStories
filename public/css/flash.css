@@ -1,4 +1,4 @@
-.alert {
+/* .alert {
   padding: 20px;
   margin-bottom: 15px;
   border-radius: 5px;
@@ -21,4 +21,35 @@
 
 .close-btn:hover {
   color: #ddd;
+} */
+
+
+.alert {
+  position: fixed;
+  top: -100px; 
+  left: 50%;
+  transform: translateX(316%) translateY(94%);
+  opacity: 0;
+  transition: top 0.5s ease-out, opacity 0.5s ease-out;
+  z-index: 10000; 
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.308);
+}
+
+.alert.show {
+  top: 20px; 
+  opacity: 1;
+}
+
+.close-btn {
+  cursor: pointer;
+  font-size: 20px;
+  padding-left: 10px;  
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
 }

@@ -111,6 +111,18 @@
     justify-content: center;
     margin-top: 80px;
   }
+
+  .like-dislike{
+    display: flex;  
+    align-items: center;
+    gap: 30px;
+  }
+
+  /* .like-count{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  } */
   
   .discover-recipe-box {
     width: 300px;
