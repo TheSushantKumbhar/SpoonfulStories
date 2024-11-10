@@ -220,7 +220,7 @@ nav {
   padding: 20px;
   z-index: 10;
   transform-origin: top right;
-  animation: slideDown 1.2s ease-out;
+  animation: slideDown 0.2s ease-out;
 }
 
 .profile-dropdown::before {
@@ -261,6 +261,54 @@ nav {
   color: #555;
 }
 
+
+/* Profile icon styling */
+.profile-icon, .profile-circle-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #0073e6;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/* Profile dropdown styling */
+.profile-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.profile-info {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.profile-options a {
+  display: block;
+  padding: 10px 0;
+  color: #0073e6;
+  text-decoration: none;
+}
+
+.profile-options a:hover {
+  text-decoration: underline;
+}
+
+/* Show dropdown on click */
+.show-dropdown #profileDropdown {
+  display: block;
+}
+
 .logout-button {
   width: 100%;
   padding: 10px;
@@ -271,7 +319,7 @@ nav {
   text-align: center;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: background-color 1.2s;
 }
 
 .logout-button:hover {
@@ -644,4 +692,65 @@ main {
 .explore {
   background-color: white;
   height: 100vh;
+}
+
+/* .mainProfile {
+  margin-top: 50px;
+} */
+
+/* General styling for show-profile container */
+.show-profile-container {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  max-width: 400px;
+  /* margin: 50px auto; */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+.mainProfile{
+  height: 100vh;
+  border: 2px solid rgba(0, 0, 0, 0);
+}
+
+.submainProfile{
+  margin-top: 100px;
+  margin-left: 35vw;
+}
+/* Show-profile icon styling */
+.show-profile-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #0073e6;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+/* Show-profile information styling */
+.show-profile-info .full-name {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.show-profile-info .username {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 3px;
+}
+
+.show-profile-info .email {
+  font-size: 14px;
+  color: #777;
 }

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Show Profile Page</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <%- include("../partials/navbar.ejs") %>
+    <div class="mainProfile">
+      <div class="submainProfile">
+        <div class="show-profile-container">
+          <div class="show-profile-icon">
+            <!-- Display the first letter of the user's name as an icon -->
+            <span><%= user.username[0].toUpperCase() %></span>
+          </div>
+          <div class="show-profile-info">
+            <div class="full-name"><%= user.fullName %></div>
+            <div class="username"><%= user.username %></div>
+            <div class="email"><%= user.email %></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

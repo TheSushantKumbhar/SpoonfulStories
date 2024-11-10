@@ -49,24 +49,39 @@
 
     <div class="user-actions">
       <% if (!currentUser) {%>
-      <a href="/login">Log In</a>
+        <a href="/login">Log In</a>
       <% } else { %>
-      <div class="profileIcon">
-        <div style="position: relative">
-          <div class="profile-icon" onclick="toggleProfileDropdown()">
-            <%= currentUser.username[0].toUpperCase() %>
-          </div>
-
-          <div class="profile-dropdown" id="profileDropdown">
-            <div class="profile-info">
-              <div class="account-name"><%= currentUser.username %></div>
+        <div class="profileIcon">
+          <div style="position: relative">
+            <div class="profile-icon" onclick="toggleProfileDropdown()">
+              <%= currentUser.username[0].toUpperCase() %>
             </div>
-            <div class="logout-button"><a href="/logout">Log Out </a></div>
+    
+            <div class="profile-dropdown" id="profileDropdown">
+              <div class="profile-info">
+                <!-- Profile icon in a circle -->
+                <div class="profile-circle-icon">
+                  <%= currentUser.username[0].toUpperCase() %>
+                </div>
+                <div class="account-name"><%= currentUser.username %></div>
+              </div>
+    
+              <!-- New profile options -->
+              <div class="profile-options">
+                <a href="/profile">Show Profile</a>
+                <a href="/your-recipes">Your Recipes</a>
+                <a href="/saved-recipes">Saved Recipes</a>
+              </div>
+    
+              <div class="logout-button">
+                <a href="/logout">Log Out</a>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
       <% } %>
     </div>
+    
   </nav>
 </header>
 

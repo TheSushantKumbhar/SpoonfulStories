@@ -20,6 +20,13 @@ router
     users.login
   );
 
+router.get("/users/:id",async (req, res) => {
+  const {id} = req.params;
+  const user = await User.findById(id);
+  res.render("users/showProfile", {user});
+})
+  
 router.get("/logout", users.logout);
+
 
 module.exports = router;
