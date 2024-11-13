@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/recipesCss/recipe_index.css" />
     <link rel="stylesheet" href="/css/flash.css" />
-  
+
     <%- include("../partials/fonts.ejs") %>
   </head>
   <body>
@@ -15,41 +15,23 @@
     <%-include("../partials/flash.ejs")%>
 
     <div class="main-recipe-discover-container">
-
       <div class="search-container">
-        <input type="text" placeholder="Search..." class="wide-search">
+        <input type="text" placeholder="Search..." class="wide-search" />
         <button type="button" class="search-button">Search</button>
       </div>
 
-    <div class="categories-container">
-      <div class="category-card">
-          <img src="images/food_plate_1.png" alt="Appetizers">
-          <p>Appetizers</p>
+      <div class="categories-container">
+        <% const categories = ["All", "Appetizers", "Main Course", "Desserts",
+        "Snacks", "Drinks", "Other", ]; %> <% for (let cat of categories) { %>
+        <% let qString = "?" %> <% if (cat == "All") { qString = "" } else {
+        qString = `?category=${cat}` } %>
+        <a class="category-card" href="/recipes<%= qString %>">
+          <img src="images/food_plate_1.png" alt="<%= cat %>" />
+          <p><%= cat %></p>
+        </a>
+        <% } %>
       </div>
-      <div class="category-card">
-          <img src="images/food_plate_1.png" alt="Main Course">
-          <p>Main Course</p>
-      </div>
-      <div class="category-card">
-          <img src="images/food_plate_1.png" alt="Desserts">
-          <p>Desserts</p>
-      </div>
-      <div class="category-card">
-          <img src="images/food_plate_1.png" alt="Snacks">
-          <p>Snacks</p>
-      </div>
-      <div class="category-card">
-          <img src="images/food_plate_1.png" alt="Drinks">
-          <p>Drinks</p>
-      </div>
-      <div class="category-card">
-          <img src="images/food_plate_1.png" alt="Others">
-          <p>Others</p>
-      </div>
-         
-  </div>
-   
-      
+
       <div class="recipe-discover-container">
         <% for (let recipe of recipes) {%>
         <div class="discover-recipe-box">
@@ -60,41 +42,41 @@
             <div class="discover-recipe-name"><%= recipe.title %></div>
             <div class="like-dislike">
               <div class="like-count">
-            <div class="like-button" id="like-button">
-              <div class="circle">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="24px"
-                  viewBox="0 -960 960 960"
-                  width="24px"
-                  fill="#e8eaed"
-                >
-                  <path
-                    d="M720-120H280v-520l280-280 50 50q7 7 11.5 19t4.5 23v14l-44 174h258q32 0 56 24t24 56v80q0 7-2 15t-4 15L794-168q-9 20-30 34t-44 14Zm-360-80h360l120-280v-80H480l54-220-174 174v406Zm0-406v406-406Zm-80-34v80H160v360h120v80H80v-520h200Z"
-                  />
-                </svg>
+                <div class="like-button" id="like-button">
+                  <div class="circle">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="24px"
+                      viewBox="0 -960 960 960"
+                      width="24px"
+                      fill="#e8eaed"
+                    >
+                      <path
+                        d="M720-120H280v-520l280-280 50 50q7 7 11.5 19t4.5 23v14l-44 174h258q32 0 56 24t24 56v80q0 7-2 15t-4 15L794-168q-9 20-30 34t-44 14Zm-360-80h360l120-280v-80H480l54-220-174 174v406Zm0-406v406-406Zm-80-34v80H160v360h120v80H80v-520h200Z"
+                      />
+                    </svg>
+                  </div>
+                  <p class="count"><%= recipe.likes.length %></p>
+                </div>
               </div>
-              <p class="count"><%= recipe.likes.length %></p>
-            </div>
-            </div>
-            <!-- Dislike Button -->
-            <div class="dislike-button" id="like-button">
-              <div class="circle">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="24px"
-                  viewBox="0 -960 960 960"
-                  width="24px"
-                  fill="#e8eaed"
-                >
-                  <path
-                    d="M240-840h440v520L400-40l-50-50q-7-7-11.5-19t-4.5-23v-14l44-174H120q-32 0-56-24t-24-56v-80q0-7 2-15t4-15l120-282q9-20 30-34t44-14Zm360 80H240L120-480v80h360l-54 220 174-174v-406Zm0 406v-406 406Zm80 34v-80h120v-360H680v-80h200v520H680Z"
-                  />
-                </svg>
-              </div>
+              <!-- Dislike Button -->
+              <div class="dislike-button" id="like-button">
+                <div class="circle">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24px"
+                    viewBox="0 -960 960 960"
+                    width="24px"
+                    fill="#e8eaed"
+                  >
+                    <path
+                      d="M240-840h440v520L400-40l-50-50q-7-7-11.5-19t-4.5-23v-14l44-174H120q-32 0-56-24t-24-56v-80q0-7 2-15t4-15l120-282q9-20 30-34t44-14Zm360 80H240L120-480v80h360l-54 220 174-174v-406Zm0 406v-406 406Zm80 34v-80h120v-360H680v-80h200v520H680Z"
+                    />
+                  </svg>
+                </div>
 
-              <p class="count"><%= recipe.dislikes.length %></p>
-            </div>
+                <p class="count"><%= recipe.dislikes.length %></p>
+              </div>
             </div>
             <div class="discover-recipe-discription">
               <%= recipe.description %>

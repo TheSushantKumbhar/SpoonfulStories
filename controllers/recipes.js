@@ -1,8 +1,14 @@
 const Recipe = require("../models/Recipe");
 
 module.exports.index = async (req, res) => {
-  const recipes = await Recipe.find({});
-  res.render("recipes/index", { recipes });
+  const { category } = req.query;
+  if (!category) {
+    const recipes = await Recipe.find({});
+    res.render("recipes/index", { recipes, category: "All" });
+  } else {
+    const recipes = await Recipe.find({ category });
+    res.render("recipes/index", { recipes, category });
+  }
 };
 
 module.exports.renderNewForm = (req, res) => {
