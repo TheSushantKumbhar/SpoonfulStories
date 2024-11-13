@@ -270,7 +270,7 @@ nav {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #0073e6;
+  background-color: #e66d00;
   color: white;
   font-weight: bold;
   font-size: 20px;
@@ -610,7 +610,7 @@ main {
   border-right: 3px solid rgba(209, 99, 36, 0.75);
   width: 0;
   animation: typing 2s steps(40) 1s 1 normal both, removeCursor 0.5s 3s forwards;
-  margin-top: 14vh;
+  margin-top: 10vh;
   margin-bottom: 0;
   /* text-shadow: 2px 2px rgb(0 0 0 / 38%); */
 }

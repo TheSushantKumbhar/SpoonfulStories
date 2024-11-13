@@ -7,12 +7,49 @@
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/recipesCss/recipe_index.css" />
     <link rel="stylesheet" href="/css/flash.css" />
+  
     <%- include("../partials/fonts.ejs") %>
   </head>
   <body>
     <%- include("../partials/navbar.ejs") %>
     <%-include("../partials/flash.ejs")%>
+
     <div class="main-recipe-discover-container">
+
+      <div class="search-container">
+        <input type="text" placeholder="Search..." class="wide-search">
+        <button type="button" class="search-button">Search</button>
+      </div>
+
+    <div class="categories-container">
+      <div class="category-card">
+          <img src="images/food_plate_1.png" alt="Appetizers">
+          <p>Appetizers</p>
+      </div>
+      <div class="category-card">
+          <img src="images/food_plate_1.png" alt="Main Course">
+          <p>Main Course</p>
+      </div>
+      <div class="category-card">
+          <img src="images/food_plate_1.png" alt="Desserts">
+          <p>Desserts</p>
+      </div>
+      <div class="category-card">
+          <img src="images/food_plate_1.png" alt="Snacks">
+          <p>Snacks</p>
+      </div>
+      <div class="category-card">
+          <img src="images/food_plate_1.png" alt="Drinks">
+          <p>Drinks</p>
+      </div>
+      <div class="category-card">
+          <img src="images/food_plate_1.png" alt="Others">
+          <p>Others</p>
+      </div>
+         
+  </div>
+   
+      
       <div class="recipe-discover-container">
         <% for (let recipe of recipes) {%>
         <div class="discover-recipe-box">
