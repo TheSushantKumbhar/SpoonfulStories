@@ -25,10 +25,10 @@
                   alt="Profile Icon"
                   class="profile-photo"
                 />
-                <div class="profile-info">
+                <a class="profile-info" href="/users/<%= recipe.author._id %>">
                   <p class="account-name"><%= recipe.author.username %></p>
                   <p class="followers-count">0,000 followers</p>
-                </div>
+                </a>
               </div>
             </a>
 
@@ -39,6 +39,10 @@
 
           <p class="recipeTitle"><%= recipe.title %></p>
           <h2 class="description"><%= recipe.description %></h2>
+
+          <div class="recipe-category">
+            <p><%= recipe.category %></p>
+          </div>
 
           <div class="all-ingredients">
             <p class="ingredients">Ingredients</p>

@@ -27,6 +27,7 @@ const recipes = [
     ],
     image:
       "https://images.unsplash.com/photo-1685156328635-d193547d7118?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    category: "Main Course",
   },
   {
     title: "Classic Pancakes",
@@ -54,6 +55,7 @@ const recipes = [
     ],
     image:
       "https://images.unsplash.com/photo-1586985288123-2495f577c250?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    category: "Desserts",
   },
   {
     title: "Chicken Caesar Salad",
@@ -77,6 +79,7 @@ const recipes = [
     ],
     image:
       "https://images.unsplash.com/photo-1582034986517-30d163aa1da9?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    category: "Appetizers",
   },
   {
     title: "Vegetable Stir Fry",
@@ -103,6 +106,7 @@ const recipes = [
     ],
     image:
       "https://images.unsplash.com/photo-1543826173-cfe2ca17577d?q=80&w=2034&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    category: "Main Course",
   },
   {
     title: "Banana Bread",
@@ -130,6 +134,7 @@ const recipes = [
     ],
     image:
       "https://images.unsplash.com/photo-1606101204735-85ad3a8bfd81?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8QmFuYW5hJTIwQnJlYWR8ZW58MHx8MHx8fDI%3D",
+    category: "Snacks",
   },
   {
     title: "Chicken Tikka Masala",
@@ -162,6 +167,7 @@ const recipes = [
     ],
     image:
       "https://images.unsplash.com/photo-1565557623262-b51c2513a641?q=80&w=1971&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    category: "Main Course",
   },
   {
     title: "Chocolate Chip Cookies",
@@ -190,6 +196,7 @@ const recipes = [
     ],
     image:
       "https://images.unsplash.com/photo-1584847801423-852691e41bc7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    category: "Desserts",
   },
   {
     title: "Beef Tacos",
@@ -215,6 +222,7 @@ const recipes = [
     ],
     image:
       "https://images.unsplash.com/photo-1640983743761-4f0e0204bc58?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    category: "Snacks",
   },
   {
     title: "Caprese Salad",
@@ -237,6 +245,7 @@ const recipes = [
     ],
     image:
       "https://images.unsplash.com/photo-1529312266912-b33cfce2eefd?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    category: "Appetizers",
   },
   {
     title: "Shrimp Scampi",
@@ -265,6 +274,7 @@ const recipes = [
     ],
     image:
       "https://images.unsplash.com/photo-1625943555419-56a2cb596640?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    category: "Snacks",
   },
 ];
 

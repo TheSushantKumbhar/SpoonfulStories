@@ -30,6 +30,18 @@ const RecipeSchema = new Schema({
       ref: "User",
     },
   ],
+  category: {
+    type: String,
+    enum: [
+      "Appetizers",
+      "Main Course",
+      "Desserts",
+      "Snacks",
+      "Drinks",
+      "Other",
+    ],
+    required: true,
+  },
 });
 
 RecipeSchema.post("findOneAndDelete", async function (doc) {
