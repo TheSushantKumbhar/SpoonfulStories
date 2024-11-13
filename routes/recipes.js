@@ -4,11 +4,17 @@ const catchAsync = require("../utils/catchAsync");
 const Recipe = require("../models/Recipe");
 const { isLoggedIn, isAuthor, validateRecipe } = require("../middlware");
 const recipes = require("../controllers/recipes");
+const multer = require("multer");
+const upload = multer({ dest: "uploads/" });
 
 router
   .route("/")
   .get(catchAsync(recipes.index))
-  .post(isLoggedIn, validateRecipe, catchAsync(recipes.createRecipe));
+  // .post(isLoggedIn, validateRecipe, catchAsync(recipes.createRecipe));
+  .post(upload.single("image"), (req, res) => {
+    console.log(req.body, req.file);
+    res.send("it worked");
+  });
 
 router.get("/new", isLoggedIn, recipes.renderNewForm);
 

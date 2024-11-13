@@ -13,9 +13,9 @@
     <%- include("../partials/navbar.ejs") %>
     <main class="post-container">
       <div class="main-form-container">
-        <form action="/recipes" method="POST">
+        <form action="/recipes" method="POST" enctype="multipart/form-data">
           <div class="form-Container">
-              <div class="recipe-form-box1" data-index="0">
+            <div class="recipe-form-box1" data-index="0">
               <div>
                 <label for="title">Title</label><br />
                 <input
@@ -42,10 +42,11 @@
             </div>
 
             <div class="recipe-form-box2" data-index="1">
-              <div>
+              <!-- <div>
                 <label for="">Image URL</label><br />
                 <input type="text" name="recipe[image]" id="img" required />
-              </div>
+              </div> -->
+              <input type="file" name="image" id="" />
 
               <label>Ingredients: </label>
               <div class="ingredientList">
