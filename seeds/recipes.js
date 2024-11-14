@@ -25,8 +25,6 @@ const recipes = [
       "Simmer the sauce for 20 minutes.",
       "Serve the sauce over the cooked spaghetti and top with grated Parmesan.",
     ],
-    image:
-      "https://images.unsplash.com/photo-1685156328635-d193547d7118?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     category: "Main Course",
   },
   {
@@ -53,8 +51,6 @@ const recipes = [
       "Flip the pancakes and cook until golden brown.",
       "Serve with maple syrup.",
     ],
-    image:
-      "https://images.unsplash.com/photo-1586985288123-2495f577c250?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     category: "Desserts",
   },
   {
@@ -77,8 +73,6 @@ const recipes = [
       "Add the sliced chicken and croutons to the salad.",
       "Toss everything together and serve.",
     ],
-    image:
-      "https://images.unsplash.com/photo-1582034986517-30d163aa1da9?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     category: "Appetizers",
   },
   {
@@ -104,8 +98,6 @@ const recipes = [
       "Add soy sauce and oyster sauce, stirring to coat the vegetables.",
       "Serve the stir-fried vegetables over cooked rice.",
     ],
-    image:
-      "https://images.unsplash.com/photo-1543826173-cfe2ca17577d?q=80&w=2034&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     category: "Main Course",
   },
   {
@@ -132,8 +124,6 @@ const recipes = [
       "Bake for 60 minutes or until a toothpick comes out clean.",
       "Let cool before slicing and serving.",
     ],
-    image:
-      "https://images.unsplash.com/photo-1606101204735-85ad3a8bfd81?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8QmFuYW5hJTIwQnJlYWR8ZW58MHx8MHx8fDI%3D",
     category: "Snacks",
   },
   {
@@ -165,8 +155,6 @@ const recipes = [
       "Stir in heavy cream and simmer for an additional 10 minutes.",
       "Serve with rice or naan and garnish with fresh cilantro.",
     ],
-    image:
-      "https://images.unsplash.com/photo-1565557623262-b51c2513a641?q=80&w=1971&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     category: "Main Course",
   },
   {
@@ -194,8 +182,6 @@ const recipes = [
       "Drop spoonfuls of the dough onto a baking sheet.",
       "Bake for 10-12 minutes or until golden brown.",
     ],
-    image:
-      "https://images.unsplash.com/photo-1584847801423-852691e41bc7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     category: "Desserts",
   },
   {
@@ -220,8 +206,6 @@ const recipes = [
       "Assemble the tacos with beef, lettuce, tomatoes, cheese, sour cream, and salsa.",
       "Serve immediately.",
     ],
-    image:
-      "https://images.unsplash.com/photo-1640983743761-4f0e0204bc58?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     category: "Snacks",
   },
   {
@@ -243,8 +227,6 @@ const recipes = [
       "Season with salt and pepper.",
       "Serve as an appetizer or side dish.",
     ],
-    image:
-      "https://images.unsplash.com/photo-1529312266912-b33cfce2eefd?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     category: "Appetizers",
   },
   {
@@ -272,8 +254,6 @@ const recipes = [
       "Add the cooked pasta to the pan and toss to coat with the sauce.",
       "Garnish with fresh parsley and serve immediately.",
     ],
-    image:
-      "https://images.unsplash.com/photo-1625943555419-56a2cb596640?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     category: "Snacks",
   },
 ];

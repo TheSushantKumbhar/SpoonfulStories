@@ -1,3 +1,7 @@
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").config();
+}
+
 const express = require("express");
 const path = require("path");
 const mongoose = require("mongoose");
@@ -74,7 +78,6 @@ app.get("/", (req, res) => {
 app.get("/temp", (req, res) => {
   res.render("temp/showRecipe.ejs");
 });
-
 
 app.all("*", (req, res, next) => {
   next(new ExpressError("Page Not Found!", 404));

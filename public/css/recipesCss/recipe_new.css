@@ -1,198 +1,199 @@
 :root {
-    --Chocolate: #903e1f;
-    --Croissant: #e07425;
-    --Golden: #ffc129;
-    --SourDough: #fff38e;
-    --white: white;
-    --black: black;
+  --Chocolate: #903e1f;
+  --Croissant: #e07425;
+  --Golden: #ffc129;
+  --SourDough: #fff38e;
+  --white: white;
+  --black: black;
 }
-
 
 .poppins-regular {
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    font-style: normal;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
-
 
 .montserrat-uniquifier {
-    font-family: "Montserrat", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 100;
-    font-style: normal;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
 }
 
-
-
-body{
-    background-image: url("/images/postBG1.png");
-    background-size: cover;
+body {
+  background-image: url("/images/postBG1.png");
+  background-size: cover;
 }
 
 .post-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 5vh 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 5vh 0;
 }
 
-.main-form-container{
-    margin-top: 50px;
+.main-form-container {
+  margin-top: 50px;
 }
-
 
 .post-container h1 {
-    font-family: "Montserrat", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 100;
-    font-style: normal;
-    font-size: 3rem;
-    text-align: center;
-    color: var(--Croissant);
-    margin-bottom: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 3rem;
+  text-align: center;
+  color: var(--Croissant);
+  margin-bottom: 20px;
 }
 
 .form-Container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    width: 60vw;
-    /* overflow: hidden; */
-    position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 60vw;
+  /* overflow: hidden; */
+  position: relative;
 }
 
 .recipe-form-box1,
 .recipe-form-box2,
 .recipe-form-box3 {
-    width: 100%;
-    min-height: 300px;
-    height: auto;
-    padding: 30px;
-    box-sizing: border-box;
-    background-color: rgba(255, 255, 255, 0.372);
-    border-radius: 15px;
-    /* border: 1px solid rgba(0, 0, 0, 0.795); */
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    display: none;
-    position: absolute;
-
+  width: 100%;
+  min-height: 300px;
+  height: auto;
+  padding: 30px;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.372);
+  border-radius: 15px;
+  /* border: 1px solid rgba(0, 0, 0, 0.795); */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  display: none;
+  position: absolute;
 }
 
 .recipe-form-box1.active,
 .recipe-form-box2.active,
 .recipe-form-box3.active {
-    display: block;
-    position: relative;
-    opacity: 1;
-    transform: translateY(0);
-    z-index: 1;
+  display: block;
+  position: relative;
+  opacity: 1;
+  transform: translateY(0);
+  z-index: 1;
 }
 
-
 label {
-    color: var(--white);
-    font-weight: bold;
-    font-size: 20px;
-    font-family: "Montserrat", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal;
+  color: var(--white);
+  font-weight: bold;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
 }
 
 input[type="text"],
 textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 8px;
-    border-radius: 8px;
-    outline: none;
-    font-size: 1rem;
-    color: var(--white);
-    background-color: #000000a4;
-    border: none;
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  border-radius: 8px;
+  outline: none;
+  font-size: 1rem;
+  color: var(--white);
+  background-color: #000000a4;
+  border: none;
 }
 
 button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    border: none;
-    background-color: #e07325b9;
-    color: white;
-    font-size: 1rem;
-    cursor: pointer;
-    border-radius: 8px;
-    transition: background-color 0.3s;
-    z-index: 100;
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #e07325b9;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+  z-index: 100;
 }
 
 button:hover {
-    background-color: var(--Chocolate);
+  background-color: var(--Chocolate);
 }
 
 .slider-buttons {
-    margin-top: 20px;
-    /* display: flex; */
-    gap: 10px;
+  margin-top: 20px;
+  /* display: flex; */
+  gap: 10px;
 }
 
 .slider-buttons button {
-    flex: 1;
-    padding: 10px;
+  flex: 1;
+  padding: 10px;
 }
 
 .cancel-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
 }
 
-.add-recipe{
-    margin: 10px;
+.add-recipe {
+  margin: 10px;
 }
 
 .cancel {
-    font-family: "Montserrat", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal;
-    text-decoration: none;
-    text-align: center;
-    border-radius: 10px;
-    margin: 10px;
-    padding: 10px;
-    width: 8vw;
-    color: white;
-    background-color: #e07325b2;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+  width: 8vw;
+  color: white;
+  background-color: #e07325b2;
 }
 
-.invalid-message{
-    color: red ;
+.invalid-message {
+  color: red;
 }
 
-
-.ingredientList, .stepsList {
-    max-height: 200px; 
-    overflow-y: auto; 
-    padding-right: 10px; 
+.ingredientList,
+.stepsList {
+  max-height: 200px;
+  overflow-y: auto;
+  padding-right: 10px;
 }
-
 
 .ingredientList::-webkit-scrollbar,
 .stepsList::-webkit-scrollbar {
-    width: 8px;
-    color: black;
-    background-color: black;
+  width: 8px;
+  color: black;
+  background-color: black;
 }
 
 .ingredientList::-webkit-scrollbar-thumb,
 .stepsList::-webkit-scrollbar-thumb {
-    background-color: white; 
-    border-radius: 40px;
-    color: black;
+  background-color: white;
+  border-radius: 40px;
+  color: black;
 }
 
+.edit-images-container {
+  display: flex;
+  overflow-x: scroll;
+}
 
+.edit-images-container > img {
+  object-fit: cover;
+  /* height: 300px; */
+  /* width: 300px; */
+}

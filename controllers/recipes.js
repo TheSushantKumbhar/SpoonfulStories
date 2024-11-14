@@ -1,4 +1,5 @@
 const Recipe = require("../models/Recipe");
+const { cloudinary } = require("../cloudinary");
 
 module.exports.index = async (req, res) => {
   const { category } = req.query;
@@ -17,8 +18,11 @@ module.exports.renderNewForm = (req, res) => {
 
 module.exports.createRecipe = async (req, res, next) => {
   const recipe = new Recipe(req.body.recipe);
+  recipe.images = req.files.map((f) => ({ url: f.path, filename: f.filename }));
   recipe.author = req.user._id;
+  recipe.category = "Other"; //REMOVE LATER
   await recipe.save();
+  console.log(recipe);
   req.flash("success", "successfully made a new recipe!");
   res.redirect(`/recipes/${recipe._id}`);
 };
@@ -53,7 +57,20 @@ module.exports.renderEditForm = async (req, res) => {
 
 module.exports.updateRecipe = async (req, res) => {
   const { id } = req.params;
+  console.log(req.body);
   const recipe = await Recipe.findByIdAndUpdate(id, { ...req.body.recipe });
+  const images = req.files.map((f) => ({ url: f.path, filename: f.filename }));
+  recipe.images.push(...images);
+  await recipe.save();
+  if (req.body.deleteImages) {
+    for (let filename of req.body.deleteImages) {
+      await cloudinary.uploader.destroy(filename);
+    }
+    await recipe.updateOne({
+      $pull: { images: { filename: { $in: req.body.deleteImages } } },
+    });
+    console.log(recipe);
+  }
   req.flash("success", "successfully updated recipe!");
   res.redirect(`/recipes/${recipe._id}`);
 };

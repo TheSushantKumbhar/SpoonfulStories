@@ -44,6 +44,12 @@
             <p><%= recipe.category %></p>
           </div>
 
+          <div class="recipe-img-container">
+            <% for (let img of recipe.images) {%>
+            <img src="<%= img.url %>" alt="recipe-img" />
+            <% } %>
+          </div>
+
           <div class="all-ingredients">
             <p class="ingredients">Ingredients</p>
             <ul>
@@ -81,7 +87,10 @@
       <div class="image-comment">
         <div class="yellow-background">
           <div class="circle-container">
-            <img src="<%= recipe.image %>" alt="image" />
+            <img
+              src="<%= recipe.images[Math.floor(Math.random()*recipe.images.length)].url %>"
+              alt="image"
+            />
           </div>
         </div>
 

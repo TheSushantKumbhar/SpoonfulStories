@@ -5,23 +5,31 @@ const Recipe = require("../models/Recipe");
 const { isLoggedIn, isAuthor, validateRecipe } = require("../middlware");
 const recipes = require("../controllers/recipes");
 const multer = require("multer");
-const upload = multer({ dest: "uploads/" });
+const { storage } = require("../cloudinary");
+const upload = multer({ storage });
 
 router
   .route("/")
   .get(catchAsync(recipes.index))
-  // .post(isLoggedIn, validateRecipe, catchAsync(recipes.createRecipe));
-  .post(upload.single("image"), (req, res) => {
-    console.log(req.body, req.file);
-    res.send("it worked");
-  });
+  .post(
+    isLoggedIn,
+    upload.array("image"),
+    validateRecipe,
+    catchAsync(recipes.createRecipe)
+  );
 
 router.get("/new", isLoggedIn, recipes.renderNewForm);
 
 router
   .route("/:id")
   .get(catchAsync(recipes.showRecipe))
-  .put(isLoggedIn, isAuthor, validateRecipe, catchAsync(recipes.updateRecipe))
+  .put(
+    isLoggedIn,
+    isAuthor,
+    upload.array("image"),
+    validateRecipe,
+    catchAsync(recipes.updateRecipe)
+  )
   .delete(isLoggedIn, isAuthor, catchAsync(recipes.deleteRecipe));
 
 router.get(

@@ -2,12 +2,23 @@ const mongoose = require("mongoose");
 const Comment = require("./Comment");
 const Schema = mongoose.Schema;
 
+// https://res.cloudinary.com/demo/image/upload/c_thumb,g_face,h_200,w_200/r_max/f_auto/woman-blackdress-stairs.png
+
+const ImageSchema = new Schema({
+  url: String,
+  filename: String,
+});
+
+ImageSchema.virtual("thumbnail").get(function () {
+  return this.url.replace("/upload", "/upload/w_200");
+});
+
 const RecipeSchema = new Schema({
   title: String,
   description: String,
   ingredients: Array,
   steps: Array,
-  image: String,
+  images: [ImageSchema],
   author: {
     type: Schema.Types.ObjectId,
     ref: "User",

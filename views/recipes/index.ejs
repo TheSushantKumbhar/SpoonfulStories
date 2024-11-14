@@ -36,7 +36,10 @@
         <% for (let recipe of recipes) {%>
         <div class="discover-recipe-box">
           <div class="discover-recipe-image">
-            <img src="<%= recipe.image %>" alt="image_1" />
+            <img
+              src="<%= recipe.images[Math.floor(Math.random()*recipe.images.length)].url %>"
+              alt="image_1"
+            />
           </div>
           <div class="discover-recipe-information-container">
             <div class="discover-recipe-name"><%= recipe.title %></div>
