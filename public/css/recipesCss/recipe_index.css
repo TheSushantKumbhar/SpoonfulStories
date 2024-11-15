@@ -117,6 +117,22 @@
     display: flex;  
     align-items: center;
     gap: 30px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  .discover-like-button{
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .discover-dislike-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
   }
 
   /* .like-count{
@@ -240,4 +256,16 @@
     margin-top: 10px;
     font-size: 1.1em;
     font-weight: bold;
+}
+
+
+.your-recipes-text{
+  margin-top: 20px;
+  margin-bottom: 30px;
+  margin-left: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 30px;
 }

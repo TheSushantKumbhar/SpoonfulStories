@@ -109,25 +109,23 @@ nav {
   margin-right: 10px;
 }
 
-.user-actions a {
+.profile-options a {
   color: rgb(0, 0, 0);
   text-decoration: none;
   font-size: 18px;
   padding: 10px 20px;
-  /* border: 2px solid black; */
   border-radius: 20px;
   background-color: #e0732581;
-  /* box-shadow: 0px 3px 3px 2px rgb(0 0 0 / 38%); */
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 13px;
 }
 
-.user-actions a:hover {
+/* .user-actions a:hover {
   background-color: var(--Golden);
   border-radius: 20px;
-}
+} */
 
 .hamburger {
   display: none;
@@ -247,6 +245,12 @@ nav {
 .profile-info {
   text-align: center;
   margin-bottom: 20px;
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 15px;
 }
 
 .profile-info .account-name {
@@ -262,7 +266,6 @@ nav {
 }
 
 
-/* Profile icon styling */
 .profile-icon, .profile-circle-icon {
   display: flex;
   align-items: center;
@@ -276,7 +279,6 @@ nav {
   font-size: 20px;
 }
 
-/* Profile dropdown styling */
 .profile-dropdown {
   display: none;
   position: absolute;
@@ -295,24 +297,30 @@ nav {
 
 .profile-options a {
   display: block;
-  padding: 10px 0;
-  color: #0073e6;
+  color: black;
   text-decoration: none;
 }
 
-.profile-options a:hover {
-  text-decoration: underline;
-}
-
-/* Show dropdown on click */
 .show-dropdown #profileDropdown {
   display: block;
 }
 
-.logout-button {
+.login-button{
+  border-radius: 20px ;
+  background-color: #e073258a ;
+  padding: 8px 20px;
+  text-decoration: none;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 13px;
+}
+
+.logout1-button {
   width: 100%;
   padding: 10px;
-  background-color: var(--Croissant);
+  background-color: var(--Golden);
   color: #fff;
   font-size: 14px;
   font-weight: bold;
@@ -320,11 +328,13 @@ nav {
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 1.2s;
+  text-decoration: none;
 }
 
-.logout-button:hover {
-  background-color: var(--Golden);
+.logout1-button:hover{
+  background-color: var(--Croissant);
 }
+
 
 .catageories {
   height: 100vh;
@@ -380,15 +390,10 @@ nav {
   font-weight: 400;
   font-style: normal;
   padding: 15px 55px;
-  /* border: 2px solid black; */
   border-radius: 50px;
   background: #e07325;
-  /* background-color: var(--Croissant); */
   margin: 0 auto;
-  /* background: linear-gradient(90deg,var(--Golden),var(--SourDough)); */
-  /* animation: bg 5s linear infinite; */
   position: relative;
-  /* box-shadow: 0px 3px 3px 2px rgb(0 0 0 / 38%); */
   text-decoration: none;
   color: var(--white);
 }
@@ -753,4 +758,22 @@ main {
 .show-profile-info .email {
   font-size: 14px;
   color: #777;
+}
+
+
+.profile-options{
+  margin: 10px; 
+}
+
+.profile-options-1{
+  margin-bottom: 10px;
+  
+}
+.profile-options-2{
+  margin-bottom: 10px;
+  
+}
+.profile-options-3{
+  margin-bottom: 10px;
+  
 }

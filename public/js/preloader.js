@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
       preloader.style.display = "none";
       mainContent.style.display = "block";
+
     }, 1000);
   });
 });

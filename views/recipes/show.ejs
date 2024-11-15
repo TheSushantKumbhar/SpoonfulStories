@@ -32,17 +32,17 @@
               </div>
             </a>
 
-            <button class="follow-button" onclick="toggleFollow()">
+            <!-- <button class="follow-button" onclick="toggleFollow()">
               Subscribe
-            </button>
+            </button> -->
           </div>
 
           <p class="recipeTitle"><%= recipe.title %></p>
           <h2 class="description"><%= recipe.description %></h2>
 
-          <div class="recipe-category">
+          <a class="recipe-category" href="/recipes?category=<%= recipe.category%>">
             <p><%= recipe.category %></p>
-          </div>
+          </a>
 
           <div class="recipe-img-container">
             <% for (let img of recipe.images) {%>

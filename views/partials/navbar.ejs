@@ -44,12 +44,12 @@
       <a class="post" href="/recipes/new" data-target="/recipes/new"
         >Post Recipes</a
       >
-      <a href="#about" data-target="#about">About</a>
+      <a href="/#about" >About</a>
     </div>
 
     <div class="user-actions">
       <% if (!currentUser) {%>
-      <a href="/login">Log In</a>
+      <a class="login-button" href="/login">Log In</a>
       <% } else { %>
       <div class="profileIcon">
         <div style="position: relative">
@@ -59,22 +59,20 @@
 
           <div class="profile-dropdown" id="profileDropdown">
             <div class="profile-info">
-              <!-- Profile icon in a circle -->
               <div class="profile-circle-icon">
                 <%= currentUser.username[0].toUpperCase() %>
               </div>
               <div class="account-name"><%= currentUser.username %></div>
             </div>
 
-            <!-- New profile options -->
             <div class="profile-options">
-              <a href="/users/<%= currentUser._id %>">Show Profile</a>
-              <a href="/your-recipes">Your Recipes</a>
-              <a href="/saved-recipes">Saved Recipes</a>
+              <a class="profile-options-1" href="/users/<%= currentUser._id %>">Show Profile</a>
+              <a class="profile-options-2" href="/your-recipes">Your Recipes</a>
+              <a class="profile-options-3" href="/saved-recipes">Saved Recipes</a>
             </div>
 
-            <div class="logout-button">
-              <a href="/logout">Log Out</a>
+            <div class="logout1-button">
+              <a class="logout1" href="/logout">Log Out</a>
             </div>
           </div>
         </div>

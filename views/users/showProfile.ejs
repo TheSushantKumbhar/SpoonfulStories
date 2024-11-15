@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Show Profile Page</title>
     <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/recipesCss/tempcss/tempshow.css" />
+    <link rel="stylesheet" href="/css/recipesCss/recipe_index.css" />
   </head>
   <body>
     <%- include("../partials/navbar.ejs") %>
@@ -12,7 +14,6 @@
       <div class="submainProfile">
         <div class="show-profile-container">
           <div class="show-profile-icon">
-            <!-- Display the first letter of the user's name as an icon -->
             <span><%= user.username[0].toUpperCase() %></span>
           </div>
           <div class="show-profile-info">
@@ -22,6 +23,122 @@
           </div>
         </div>
       </div>
+      <section id="/your-recipes">
+        <p class="your-recipes-text">Your Recipes</p>
+        <div id="recipe-list" class="your-recipe-list">
+          <div class="discover-recipe-box">
+            <div class="discover-recipe-image">
+              <img src="../images/postBG1.png" alt="image_1" />
+            </div>
+            <div class="discover-recipe-information-container">
+              <div class="discover-recipe-name">panner</div>
+              <div class="like-dislike">
+                <div class="like-count">
+              <div class="like-button" id="like-button">
+                <div class="circle">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24px"
+                    viewBox="0 -960 960 960"
+                    width="24px"
+                    fill="#e8eaed"
+                  >
+                    <path
+                      d="M720-120H280v-520l280-280 50 50q7 7 11.5 19t4.5 23v14l-44 174h258q32 0 56 24t24 56v80q0 7-2 15t-4 15L794-168q-9 20-30 34t-44 14Zm-360-80h360l120-280v-80H480l54-220-174 174v406Zm0-406v406-406Zm-80-34v80H160v360h120v80H80v-520h200Z"
+                    />
+                  </svg>
+                </div>
+                <p class="count">10</p>
+              </div>
+              </div>
+              <!-- Dislike Button -->
+              <div class="dislike-button" id="like-button">
+                <div class="circle">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24px"
+                    viewBox="0 -960 960 960"
+                    width="24px"
+                    fill="#e8eaed"
+                  >
+                    <path
+                      d="M240-840h440v520L400-40l-50-50q-7-7-11.5-19t-4.5-23v-14l44-174H120q-32 0-56-24t-24-56v-80q0-7 2-15t4-15l120-282q9-20 30-34t44-14Zm360 80H240L120-480v80h360l-54 220 174-174v-406Zm0 406v-406 406Zm80 34v-80h120v-360H680v-80h200v520H680Z"
+                    />
+                  </svg>
+                </div>
+  
+                <p class="count">20</p>
+              </div>
+              </div>
+              <div class="discover-recipe-discription">
+                description
+              </div>
+              <div class="show-more">
+                <a href="/recipes/">Show More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="/saved-recipes">
+        <p class="your-recipes-text">Saved recipes</p>
+        <div id="recipe-list" class="your-recipe-list">
+          <div class="discover-recipe-box">
+            <div class="discover-recipe-image">
+              <img src="../images/postBG1.png" alt="image_1" />
+            </div>
+            <div class="discover-recipe-information-container">
+              <div class="discover-recipe-name">panner</div>
+              <div class="like-dislike">
+                <div class="like-count">
+              <div class="like-button" id="like-button">
+                <div class="circle">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24px"
+                    viewBox="0 -960 960 960"
+                    width="24px"
+                    fill="#e8eaed"
+                  >
+                    <path
+                      d="M720-120H280v-520l280-280 50 50q7 7 11.5 19t4.5 23v14l-44 174h258q32 0 56 24t24 56v80q0 7-2 15t-4 15L794-168q-9 20-30 34t-44 14Zm-360-80h360l120-280v-80H480l54-220-174 174v406Zm0-406v406-406Zm-80-34v80H160v360h120v80H80v-520h200Z"
+                    />
+                  </svg>
+                </div>
+                <p class="count">10</p>
+              </div>
+              </div>
+              <!-- Dislike Button -->
+              <div class="dislike-button" id="like-button">
+                <div class="circle">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24px"
+                    viewBox="0 -960 960 960"
+                    width="24px"
+                    fill="#e8eaed"
+                  >
+                    <path
+                      d="M240-840h440v520L400-40l-50-50q-7-7-11.5-19t-4.5-23v-14l44-174H120q-32 0-56-24t-24-56v-80q0-7 2-15t4-15l120-282q9-20 30-34t44-14Zm360 80H240L120-480v80h360l-54 220 174-174v-406Zm0 406v-406 406Zm80 34v-80h120v-360H680v-80h200v520H680Z"
+                    />
+                  </svg>
+                </div>
+  
+                <p class="count">20</p>
+              </div>
+              </div>
+              <div class="discover-recipe-discription">
+                description
+              </div>
+              <div class="show-more">
+                <a href="/recipes/">Show More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
     </div>
   </body>
 </html>
