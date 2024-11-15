@@ -13,6 +13,7 @@ const flash = require("connect-flash");
 const passport = require("passport");
 const localStrategy = require("passport-local");
 const User = require("./models/User");
+const mongoSanitize = require("express-mongo-sanitize");
 
 const port = 8008;
 
@@ -37,6 +38,7 @@ app.set("views", path.join(__dirname, "/views"));
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
+app.use(mongoSanitize());
 
 const sessionConfig = {
   secret: "thisshouldbeabettersecret",
