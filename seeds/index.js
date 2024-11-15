@@ -66,6 +66,7 @@ const seedDB = async () => {
   await Recipe.deleteMany({});
   for (let recipe of recipes) {
     recipe.author = "672779116d8c91d956029c3b";
+<<<<<<< Updated upstream
     recipe.images = [
       {
         url: "https://res.cloudinary.com/drofmckjj/image/upload/v1731525477/SpoonfulStories/otmnnhkifaukcwfmly84.jpg",
@@ -91,6 +92,8 @@ const seedDB = async () => {
         filename: "SpoonfulStories/cvbmn4wdzqaeidotsson",
       },
     ];
+=======
+>>>>>>> Stashed changes
   }
   await Recipe.insertMany(recipes);
   console.log("10 recipes inserted...");

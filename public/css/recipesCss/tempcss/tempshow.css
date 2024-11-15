@@ -67,6 +67,7 @@
 .profile-info {
   display: flex;
   flex-direction: column;
+  gap: 5px;
 }
 
 .account-name {
@@ -432,6 +433,7 @@ button:nth-child(1) {
   background-color: #0056b3;
 }
 
+<<<<<<< Updated upstream
 .recipe-img-container {
   gap: 10px;
 }
@@ -440,3 +442,18 @@ button:nth-child(1) {
   height: 30vh;
   width: auto;
 }
+=======
+
+.recipe-category{
+  margin-top: 20px;
+  border-bottom: 1px solid black;
+  color: #bc5718;
+  cursor: pointer;
+  text-decoration: none;
+  
+}
+
+.recipe-category :hover{
+  color: rgb(255, 38, 0);
+}
+>>>>>>> Stashed changes
