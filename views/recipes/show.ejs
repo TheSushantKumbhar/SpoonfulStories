@@ -40,7 +40,10 @@
           <p class="recipeTitle"><%= recipe.title %></p>
           <h2 class="description"><%= recipe.description %></h2>
 
-          <a class="recipe-category" href="/recipes?category=<%= recipe.category%>">
+          <a
+            class="recipe-category"
+            href="/recipes?category=<%= recipe.category%>"
+          >
             <p><%= recipe.category %></p>
           </a>
 
@@ -68,7 +71,7 @@
           </div>
           <div class="functionalButtons">
             <form
-              action="/recipes/<%= recipe._id %>?method=DELETE"
+              action="/recipes/<%= recipe._id %>?_method=DELETE"
               method="POST"
             >
               <% if (currentUser && recipe.author.equals(currentUser._id)) { %>
