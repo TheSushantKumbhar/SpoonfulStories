@@ -14,12 +14,14 @@ const passport = require("passport");
 const localStrategy = require("passport-local");
 const User = require("./models/User");
 const mongoSanitize = require("express-mongo-sanitize");
+const catchAsync = require("./utils/catchAsync");
 
 const port = 8008;
 
 const userRoutes = require("./routes/users");
 const recipeRoutes = require("./routes/recipes");
 const commentRoutes = require("./routes/comments");
+const recipeController = require("./controllers/recipes");
 
 mongoose.connect("mongodb://127.0.0.1:27017/SpoonfulStories");
 
@@ -75,9 +77,7 @@ app.use("/", userRoutes);
 app.use("/recipes", recipeRoutes);
 app.use("/recipes/:id/comments", commentRoutes);
 
-app.get("/", (req, res) => {
-  res.render("index");
-});
+app.get("/", catchAsync(recipeController.findTopRecipes));
 
 app.get("/temp", (req, res) => {
   res.render("temp/showRecipe.ejs");

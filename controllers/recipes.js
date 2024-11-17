@@ -111,3 +111,45 @@ module.exports.dislikeRecipe = async (req, res) => {
   }
   res.redirect(`/recipes/${recipe._id}`);
 };
+
+module.exports.findTopRecipes = async (req, res) => {
+  const topRecipes = await Recipe.aggregate([
+    {
+      $project: {
+        title: 1,
+        description: 1,
+        images: {
+          $map: { input: "$images", as: "image", in: "$$image.url" },
+        },
+        author: 1,
+        likeCount: { $size: "$likes" },
+      },
+    },
+    { $sort: { likeCount: -1 } },
+    { $limit: 3 },
+    {
+      $lookup: {
+        from: "users", // The name of the User collection in MongoDB
+        localField: "author", // The field in Recipe collection to match
+        foreignField: "_id", // The field in User collection to match
+        as: "authorDetails", // The alias where the populated data will be stored
+      },
+    },
+    {
+      $unwind: "$authorDetails", // To flatten the array returned by $lookup
+    },
+    {
+      $project: {
+        title: 1,
+        description: 1,
+        images: 1,
+        likeCount: 1,
+        author: "$authorDetails.username",
+      },
+    },
+  ]);
+
+  console.log(topRecipes);
+
+  res.render("index", { topRecipes });
+};

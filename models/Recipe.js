@@ -55,6 +55,17 @@ const RecipeSchema = new Schema({
   },
 });
 
+// RecipeSchema.virtual("likeCount").get(function () {
+//   return this.likes.length;
+// });
+
+// RecipeSchema.virtual("dislikeCount").get(function () {
+//   return this.dislikes.length;
+// });
+
+// RecipeSchema.set("toJSON", { virtuals: true });
+// RecipeSchema.set("toObject", { virtuals: true });
+
 RecipeSchema.post("findOneAndDelete", async function (doc) {
   if (doc) {
     await Comment.deleteMany({
