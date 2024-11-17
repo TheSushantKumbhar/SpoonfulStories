@@ -149,7 +149,7 @@ module.exports.findTopRecipes = async (req, res) => {
     },
   ]);
 
-  console.log(topRecipes);
+  // console.log(topRecipes);
 
   res.render("index", { topRecipes });
 };
