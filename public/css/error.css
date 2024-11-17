@@ -1,0 +1,12 @@
+.statusCode {
+  text-align: center;
+  font-size: 10rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+}
+
+.errMessage {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 2rem;
+}

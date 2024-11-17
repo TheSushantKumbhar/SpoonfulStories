@@ -4,15 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Error</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/error.css" />
 
     <%- include("partials/fonts.ejs") %>
   </head>
   <body>
     <%- include("partials/navbar.ejs") %>
     <div style="padding-top: 15vh">
-      <h1><%= err.message %></h1>
+      <h1 class="statusCode">
+        <%= (!err.statusCode) ? "500" : err.statusCode %>
+      </h1>
+      <h1 class="errMessage"><%= err.message %></h1>
+      <% if (process.env.NODE_ENV !== "production") { %>
       <p><%= err.stack %></p>
+      <% } %>
     </div>
   </body>
 </html>
