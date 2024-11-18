@@ -15,6 +15,7 @@ const localStrategy = require("passport-local");
 const User = require("./models/User");
 const mongoSanitize = require("express-mongo-sanitize");
 const catchAsync = require("./utils/catchAsync");
+const helmet = require("helmet");
 
 const port = 8008;
 
@@ -57,6 +58,7 @@ const sessionConfig = {
 
 app.use(session(sessionConfig));
 app.use(flash());
+app.use(helmet({ contentSecurityPolicy: false }));
 
 app.use(passport.initialize());
 // MAKE SURE "app.use(session(config))" is there BEFORE using passport.session()
