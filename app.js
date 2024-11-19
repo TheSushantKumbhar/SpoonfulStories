@@ -24,7 +24,12 @@ const recipeRoutes = require("./routes/recipes");
 const commentRoutes = require("./routes/comments");
 const recipeController = require("./controllers/recipes");
 
-mongoose.connect("mongodb://127.0.0.1:27017/SpoonfulStories");
+const MongoDBStore = require("connect-mongo");
+
+const dbUrl = process.env.DB_URL;
+const localDbUrl = "mongodb://127.0.0.1:27017/SpoonfulStories";
+//"mongodb://127.0.0.1:27017/SpoonfulStories"
+mongoose.connect(localDbUrl);
 
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error"));
@@ -43,7 +48,20 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use(mongoSanitize());
 
+const store = MongoDBStore.create({
+  mongoUrl: localDbUrl,
+  touchAfter: 24 * 60 * 60,
+  crypto: {
+    secret: "thisshouldbeabettersecret",
+  },
+});
+
+store.on("error", function (e) {
+  console.log("session store error", e);
+});
+
 const sessionConfig = {
+  store,
   name: "session",
   secret: "thisshouldbeabettersecret",
   resave: false,
