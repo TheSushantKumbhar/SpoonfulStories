@@ -29,7 +29,7 @@ const MongoDBStore = require("connect-mongo");
 const dbUrl = process.env.DB_URL;
 const localDbUrl = "mongodb://127.0.0.1:27017/SpoonfulStories";
 //"mongodb://127.0.0.1:27017/SpoonfulStories"
-mongoose.connect(localDbUrl);
+mongoose.connect(dbUrl);
 
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error"));
@@ -49,7 +49,7 @@ app.use(methodOverride("_method"));
 app.use(mongoSanitize());
 
 const store = MongoDBStore.create({
-  mongoUrl: localDbUrl,
+  mongoUrl: dbUrl,
   touchAfter: 24 * 60 * 60,
   crypto: {
     secret: "thisshouldbeabettersecret",

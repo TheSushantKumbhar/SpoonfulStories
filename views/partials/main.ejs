@@ -4,7 +4,7 @@
     <div class="recipe-container">
       <p class="title animate-text">Top Recipes!!!</p>
       <div class="recipe-wrapper">
-        <% for (let r of topRecipes) {%>
+        <% if (topRecipes.length !== 0) { for (let r of topRecipes) {%>
         <div class="recipe-card">
           <img
             src="<%= r.images[Math.floor(Math.random()*r.images.length)] %>"
@@ -42,6 +42,10 @@
             <%= r.likeCount %>
           </p>
           <a href="/recipes/<%= r._id %>" class="recipe-button">Visit Recipe</a>
+        </div>
+        <% } } else { %>
+        <div class="recipe-card">
+          <p>cannot find recipes!!</p>
         </div>
         <% } %>
       </div>
