@@ -20,7 +20,7 @@ module.exports.createRecipe = async (req, res, next) => {
   const recipe = new Recipe(req.body.recipe);
   recipe.images = req.files.map((f) => ({ url: f.path, filename: f.filename }));
   recipe.author = req.user._id;
-  recipe.category = "Other"; //REMOVE LATER
+  // recipe.category = "Other"; //REMOVE LATER
   await recipe.save();
   console.log(recipe);
   req.flash("success", "successfully made a new recipe!");
@@ -45,6 +45,15 @@ module.exports.showRecipe = async (req, res) => {
   res.render("recipes/show", { recipe });
 };
 
+const categories = [
+  "Appetizers",
+  "Main Course",
+  "Desserts",
+  "Snacks",
+  "Drinks",
+  "Other",
+];
+
 module.exports.renderEditForm = async (req, res) => {
   const { id } = req.params;
   const recipe = await Recipe.findById(id);
@@ -52,7 +61,7 @@ module.exports.renderEditForm = async (req, res) => {
     req.flash("error", "cannot find recipe...");
     return res.redirect("/recipes");
   }
-  res.render("recipes/edit", { recipe });
+  res.render("recipes/edit", { recipe, categories });
 };
 
 module.exports.updateRecipe = async (req, res) => {
@@ -69,7 +78,7 @@ module.exports.updateRecipe = async (req, res) => {
     await recipe.updateOne({
       $pull: { images: { filename: { $in: req.body.deleteImages } } },
     });
-    console.log(recipe);
+    // console.log(recipe);
   }
   req.flash("success", "successfully updated recipe!");
   res.redirect(`/recipes/${recipe._id}`);
@@ -78,6 +87,9 @@ module.exports.updateRecipe = async (req, res) => {
 module.exports.deleteRecipe = async (req, res) => {
   const { id } = req.params;
   const recipe = await Recipe.findByIdAndDelete(id);
+  for (let img of recipe.images) {
+    await cloudinary.uploader.destroy(img.filename);
+  }
   req.flash("success", "successfully deleted comment!");
   res.redirect("/recipes");
 };

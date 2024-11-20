@@ -17,6 +17,18 @@
           <div class="form-Container">
             <div class="recipe-form-box1" data-index="0">
               <div>
+                <label for="category">Category: </label><br />
+                <select name="recipe[category]" id="category">
+                  <option value="Appetizers">Appetizers</option>
+                  <option value="Main Course">Main Course</option>
+                  <option value="Desserts">Desserts</option>
+                  <option value="Snacks">Snacks</option>
+                  <option value="Drinks">Drinks</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+
+              <div>
                 <label for="title">Title</label><br />
                 <input
                   type="text"
@@ -46,7 +58,10 @@
                 <label for="">Image URL</label><br />
                 <input type="text" name="recipe[image]" id="img" required />
               </div> -->
-              <input type="file" name="image" id="" multiple />
+              <label for="uploadImage">Images</label>
+              <div class="imageUpload">
+                <input type="file" name="image" id="uploadImage" multiple />
+              </div>
 
               <label>Ingredients: </label>
               <div class="ingredientList">
@@ -68,13 +83,14 @@
             <div class="recipe-form-box3" data-index="2">
               <label for="">Steps: </label>
               <div class="stepsList">
-                <textarea
+                <input
+                  type="text"
                   name="recipe[steps][]"
                   id="step"
                   placeholder="step..."
                   required
-                ></textarea
-                ><br />
+                />
+                <br />
               </div>
               <button type="button" onclick="addStep()">Add Step</button
               ><br /><br />

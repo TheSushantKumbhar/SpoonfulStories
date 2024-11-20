@@ -10,83 +10,129 @@
   </head>
   <body>
     <%- include("../partials/navbar.ejs") %>
-    <main class="container">
-      <h1>Edit Recipe</h1>
-      <div class="formContainer">
+    <main class="post-container">
+      <div class="main-form-container">
         <form
           action="/recipes/<%= recipe._id %>?_method=PUT"
           method="POST"
           enctype="multipart/form-data"
         >
-          <div>
-            <label for="title">Title</label><br />
-            <input
-              type="text"
-              name="recipe[title]"
-              id="title"
-              value="<%= recipe.title %>"
-              required
-            />
-          </div>
-          <div>
-            <label for="description">Description</label><br />
-            <textarea
-              name="recipe[description]"
-              id="description"
-              rows="5"
-              cols="40"
-              required
-            >
-                <%= recipe.description %>
-            </textarea>
-          </div>
+          <div class="form-Container">
+            <div class="recipe-form-box1" data-index="0">
+              <div>
+                <label for="category">Category: </label><br />
+                <select name="recipe[category]" id="category"> 
+                  <% for(let category of categories) {%>
+                  <option value="<%= category %>" <%=recipe.category === category ?
+                    "selected":"" %>
+                    ><%= category %>
+                  </option>
+                  <% } %>
+                </select>
+              </div>
 
-          <div>
-            <label for="">Add Images</label><br />
-            <input type="file" name="image" id="image" multiple />
-          </div>
+              <div>
+                <label for="title">Title</label><br />
+                <input
+                  type="text"
+                  id="text-input"
+                  name="recipe[title]"
+                  id="title"
+                  value="<%= recipe.title %>"
+                  required
+                />
+              </div>
 
-          <label>Ingredients: </label>
-          <div class="ingredientList">
-            <% for (let ingredient of recipe.ingredients) { %>
-            <input
-              type="text"
-              name="recipe[ingredients][]"
-              id="ingredient"
-              value="<%= ingredient %>"
-              required
-            />
-            <br />
-            <% } %>
-          </div>
-
-          <label for="">Steps: </label>
-          <div class="stepsList">
-            <% for (let step of recipe.steps) { %>
-            <textarea name="recipe[steps][]" id="step" required>
-            <%= step %>
-            </textarea>
-            <br />
-            <% } %>
-          </div>
-          <div class="edit-images-container">
-            <% recipe.images.forEach(function(img, i) { %>
-            <div class="edit-image-checkbox">
-              <input
-                type="checkbox"
-                id="image-<%= i %>"
-                name="deleteImages[]"
-                value="<%= img.filename %>"
-              />
-              <label for="image-<%= i %>">delete image?</label>
+              <div>
+                <label for="description">Description</label>
+                <br />
+                <textarea
+                  name="recipe[description]"
+                  id="description"
+                  rows="5"
+                  cols="40"
+                  required
+                >
+<%= recipe.description %>
+              </textarea
+                ><br />
+              </div>
             </div>
-            <img src="<%= img.thumbnail %>" alt="img" />
-            <%}) %>
+
+            <div class="recipe-form-box2" data-index="1">
+              <!-- <div>
+                <label for="">Image URL</label><br />
+                <input type="text" name="recipe[image]" id="img" required />
+              </div> -->
+              <label for="">Add Images</label><br />
+              <div>
+                <input type="file" name="image" id="image" multiple />
+              </div>
+
+              <label>Ingredients: </label>
+              <div class="ingredientList">
+                <% for (let ingredient of recipe.ingredients) { %>
+                <input
+                  type="text"
+                  name="recipe[ingredients][]"
+                  id="ingredient"
+                  value="<%= ingredient %>"
+                  required
+                />
+                <br />
+                <% } %>
+              </div>
+              <button type="button" onclick="addIngredient()">
+                Add Ingredient
+              </button>
+              <br />
+            </div>
+
+            <div class="recipe-form-box3" data-index="2">
+              <label for="steps">Steps: </label>
+              <div class="stepsList">
+                <% for (let step of recipe.steps) { %>
+                <input
+                  type="text"
+                  name="recipe[steps][]"
+                  id="steps"
+                  value="<%= step %>"
+                  required
+                />
+                <br />
+                <% } %>
+              </div>
+              <div class="edit-images-container">
+                <% recipe.images.forEach(function(img, i) { %>
+                <div class="edit-image-checkbox">
+                  <input
+                    type="checkbox"
+                    id="image-<%= i %>"
+                    name="deleteImages[]"
+                    value="<%= img.filename %>"
+                  />
+                  <label for="image-<%= i %>">delete image?</label>
+                </div>
+                <img src="<%= img.thumbnail %>" alt="img" />
+                <%}) %>
+              </div>
+              <button type="button" onclick="addStep()">Add Step</button
+              ><br /><br />
+              <div class="cancel-container">
+                <button>Save Recipe</button>
+              </div>
+            </div>
           </div>
-          <button>Save Recipe</button>
         </form>
       </div>
-      <a href="/recipes/<%= recipe._id %>">Cancel</a>
+
+      <div class="slider-buttons">
+        <button id="prevBtn" onclick="prevSlide()">Previous</button>
+        <button id="nextBtn" onclick="nextSlide()">Next</button>
+        <a href="/recipes" class="cancel">Cancel</a>
+      </div>
     </main>
+    <script src="/js/recipes/recipeNew.js"></script>
+    <script src="/js/recipes/recipeNew2.js"></script>
   </body>
 </html>

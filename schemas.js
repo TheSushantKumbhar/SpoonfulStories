@@ -7,7 +7,7 @@ module.exports.recipeSchema = Joi.object({
     ingredients: Joi.array().required(),
     steps: Joi.array().required(),
     // image: Joi.string().required(),
-    // category: Joi.string().required(),
+    category: Joi.string().required(),
   }).required(),
   deleteImages: Joi.array(),
 });

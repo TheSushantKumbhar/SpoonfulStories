@@ -96,16 +96,21 @@ label {
 }
 
 input[type="text"],
-textarea {
+textarea,
+select {
   width: 100%;
   padding: 10px;
-  margin-top: 8px;
+  margin: 8px 0;
   border-radius: 8px;
   outline: none;
   font-size: 1rem;
   color: var(--white);
   background-color: #000000a4;
   border: none;
+}
+
+textarea {
+  overflow: auto;
 }
 
 button {
@@ -196,4 +201,7 @@ button:hover {
   object-fit: cover;
   /* height: 300px; */
   /* width: 300px; */
+  height: 5rem;
+  width: 5rem;
+  object-fit: cover;
 }
