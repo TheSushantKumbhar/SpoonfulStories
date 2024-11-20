@@ -1,50 +1,245 @@
 :root {
-    --Chocolate: #903e1f;
-    --Croissant: #e07425;
-    --Golden: #ffc129;
-    --SourDough: #fff38e;
-    --white: white;
-    --black: black;
+  --Chocolate: #903e1f;
+  --Croissant: #e07425;
+  --Golden: #ffc129;
+  --SourDough: #fff38e;
+  --white: white;
+  --black: black;
 }
 
-.main-recipe-container{
-  /* display: flex;    
-  justify-content: center;
-  align-items: center; */
+.main-recipeshow-container {
+  height: 100vh;
   overflow-x: hidden;
-  height: 100vh;
+  display: flex;
+  /* justify-content: center;
+    align-items: center; */
 }
 
-.recipe-container{
-  height: 100vh;
-  width: auto;
+.sub-main-recipeshow-container {
+  height: auto;
+  min-height: 100vh;
   margin-top: 100px;
-  background-color: rgb(255, 255, 255);
-  padding: 20px;
-  border-radius: 20px;
-  top: 20%;
-  bottom: 20%;
 }
 
-.recipe-sub-container {
-    height: 10vh;
-    width: auto;
+.sub-sub-main-recipeshow-container {
+  width: 60vw;
+  margin-left: 5vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  height: auto;
 }
 
-.sub-container{
-  height: 80vh;
-  background-color: white;
-  /* border-radius: 20px; */
-  /* overflow-y: scroll; */
-  transform: translateX(-7vw) translateY(-3vh);
+.profile-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile-button {
+  text-decoration: none;
+}
+
+.profile-section {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  background-color: #fff;
+  border-radius: 50px;
+  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
+  width: 250px;
+  max-width: 90%;
+  transition: transform 0.2s;
+}
+
+.profile-section:hover {
+  transform: scale(1.05);
+}
+
+.profile-photo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.account-name {
+  font-weight: bold;
+  font-size: 1.3em;
+  color: #333;
+  text-decoration: underline;
+  font-family: "Poppins", sans-serif;
+}
+
+.followers-count {
+  font-size: 0.9em;
+  color: #666;
+}
+
+.follow-button {
+  padding: 20px 30px;
+  background-color: var(--Croissant);
+  color: #fff;
+  border: none;
+  border-radius: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.follow-button.following {
+  background-color: #4caf50;
+}
+
+.follow-button:hover {
+  background-color: #357ae8;
+}
+
+.follow-button.following:hover {
+  background-color: #388e3c;
+}
+
+.recipeTitle {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 42px;
+  margin-top: 20px;
+}
+
+.description {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 28px;
+  margin-top: 20px;
+  overflow: hidden;
   width: 50vw;
 }
+
+.ingredients {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.all-ingredients > ul > li {
+  list-style: none;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+}
+
+.steps1 {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  list-style: none;
+}
+
+.steps > ol > li {
+  list-style: none;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+}
+
+.delete-recipe {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  background-color: #f44336;
+}
+
+.delete-recipe:hover {
+  background-color: #d32f2f;
+}
+
+.edit {
+  font-family: "Montserrat", sans-serif;
+  text-decoration: none;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  background-color: #4caf50;
+}
+
+.edit:hover {
+  background-color: #388e3c;
+}
+
+.options {
+  font-family: "Montserrat", sans-serif;
+  text-decoration: none;
+  color: #2196f3;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  background-color: #f1f1f1;
+
+  /* font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease; */
+}
+
+.options:hover {
+  background-color: #e3f2fd;
+  color: #1565c0;
+}
+
+.functionalButtons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  gap: 40px;
+}
+
 .circle-container {
   width: 620px;
   height: 620px;
   border-radius: 50%;
   overflow: hidden;
-  transform:rotate(0deg) translateX(-1px) translateY(1px);
+  transform: rotate(0deg) translateX(0vw) translateY(0vh);
 }
 
 .circle-container img {
@@ -55,188 +250,229 @@
 }
 
 .yellow-background {
-  width: 650px; 
+  width: 650px;
   height: 650px;
-  background-color: var(--Chocolate);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transform: rotate(0deg) translateX(50vw) translateY(-107vh);
-  overflow-x: hidden;
-}
-
-.icon-circle {
-  width: 50px;
-  height: 50px;
   background-color: var(--Croissant);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  /* position: absolute; */
-  color: #ffffff;
+  transform: rotate(0deg) translateX(-4vw) translateY(-4vh);
+  overflow-x: hidden;
 }
 
-.icon1{
-  color: white;
-}
-
-.icon-circle svg path {
-  fill: #ffffff; 
-}
-
-/* .icon6 { transform: translateX(50vw) translateY(-190vh); }
-.icon2 {  transform: translateX(54vw) translateY(-138vh); }
-.icon5 {  transform: translateX(62vw) translateY(-149vh); }
-.icon4 { transform: translateX(50vw) translateY(-193vh);  }
-.icon3 {  transform: translateX(84vw) translateY(-136vh); }
-.icon1 {  transform: translateX(74vw) translateY(-112vh);  } */
-
-
-/* .icon6 { transform: translateX(50vw) translateY(-100vh); } */
-.icon2 {  transform: translateX(65vw) translateY(-107vh); }
-.icon5 {  transform: translateX(57vw) translateY(-128vh); }
-.icon4 { transform: translateX(50vw) translateY(-121vh);  }
-.icon3 {  transform: translateX(80vw) translateY(-114vh); }
-.icon1 {  transform: translateX(72vw) translateY(-100vh);  }
-
-.sub-container > form {
-    padding: 20px;
-}
-
-.sub-container > h1, h2, h3 {
-    padding: 10px 20px;
-    text-align: left;
-}
-
-.sub-container>h1{
-  font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 600;
-  font-style: normal;
-  font-size: 42px;
-}
-
-.sub-container>h2{
-  font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 28px;
-}
-
-.sub-container>h3{
-  font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 600;
-  font-style: normal;
-  font-size: 20px;
-}
-
-.sub-container > ul, ol {
-    padding: 10px 30px;
-    list-style: none;
-    text-align: left;
-    font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 15px;
-}
-
-
-.username{
-  padding: 10px;
-  font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 25px;
-  margin-bottom: 20px;
-}
-.options {
-    padding: 20px;
-}
-
-
-.steps{
-  transform: translateX(1vw) translateY(1vh);
-}
-
-.steps > h3{
-  font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 600;
-  font-style: normal;
-  font-size: 20px;
-}
-
-.comment-container{
-  height: 56vh;
-  width: 30vw;
-  background-color: white;
-  border: 1px solid black;
-  border-radius: 20px;
-  position: absolute;
-  top: 2vh;
-  right: -42vw;
-  margin-top: 120px;
-}
-
-.submit-comment{
-  padding: 10px 10px;
+.button-container {
   display: flex;
+  gap: 100px;
   justify-content: center;
-  align-items: center;  
-  gap: 40px;
-  margin-top: 20px;
+  align-items: center;
+  margin-top: 0px;
+  margin-left: -200px;
 }
 
-.all-comments{
-  height: auto;
-  max-height:43vh ;
-  overflow-y: auto;
-  scrollbar-color: black;
-  padding: 10px 10px;
+/* Each button styling */
+.button {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  margin-left: 20px;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
 }
 
-
-.all-comments::-webkit-scrollbar-thumb {
-  background-color: rgb(255, 255, 255);
-  color: black;
+/* Circle background styling */
+.button .circle {
+  width: 55px;
+  height: 55px;
+  background-color: var(--Croissant);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 4px;
 }
 
-.sub-container::-webkit-scrollbar-thumb {
-  background-color: rgb(255, 255, 255);
-  color: black;
+/* SVG styling */
+.button svg {
+  width: 24px;
+  height: 24px;
+  fill: #ffffff;
 }
 
-
-.commentSection{
-  height: 40vh;
+/* Count styling */
+.count {
+  font-size: 12px;
+  color: #555;
 }
 
-.comment-text{
-  height: 40px;
-  width: 250px;
-  border-radius: 30px;
+.comment-section {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+  transform: translateX(-15vw) translateY(11vh);
+  margin-bottom: 30px;
 }
 
+.comment-section h2 {
+  margin-bottom: 20px;
+  color: #333333;
+  font-size: 24px;
+}
 
-.postbutton{
-  border-radius: 30px;
+/* Comment Form Styling */
+.comment-form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.comment-form textarea {
+  resize: none;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  outline: none;
+}
+
+.comment-form button {
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
   border: none;
-  padding: 10px 30px;
-  background-color: #2d2b2b80;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-.comment{
-  padding-top: 4px;
-} 
+.comment-form button:hover {
+  background-color: #0056b3;
+}
 
+/* Comments List Styling */
+.comments-list .comment {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
 
+.comment-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  position: relative;
+  width: 100%;
+}
+
+.comment-body h3 {
+  margin: 0;
+  color: #007bff;
+  font-size: 18px;
+}
+
+.comment-body p {
+  margin: 8px 0;
+  color: #555555;
+}
+
+.comment-time {
+  color: #aaa;
+  font-size: 12px;
+}
+
+/* Reply Button Styling */
+.reply-button {
+  margin-top: 8px;
+  padding: 5px 10px;
+  background-color: #e0e0e0;
+  color: #007bff;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.reply-button:hover {
+  background-color: #d0d0d0;
+}
+
+/* Reply Form Styling */
+.reply-form {
+  display: none; /* Hidden by default */
+  margin-top: 10px;
+}
+
+.reply-form textarea {
+  resize: none;
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  margin-bottom: 8px;
+}
+
+.reply-form button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.reply-form button:hover {
+  background-color: #0056b3;
+}
+
+.recipe-img-container {
+  gap: 10px;
+}
+
+.recipe-img-container img {
+  height: 30vh;
+  width: auto;
+}
+
+.recipe-category {
+  margin: 10px 0;
+  border-bottom: 1px solid black;
+  color: #bc5718;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+}
+
+.recipe-category :hover {
+  color: rgb(255, 38, 0);
+}
+
+.count {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.delete-comment {
+  border: none;
+  background-color: red;
+  padding: 3px;
+  border-radius: 5px;
+}
+
+.delete-comment:hover {
+  cursor: pointer;
+}
