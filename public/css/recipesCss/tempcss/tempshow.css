@@ -75,6 +75,7 @@
   font-size: 1.3em;
   color: #333;
   text-decoration: underline;
+  font-family: "Poppins", sans-serif;
 }
 
 .followers-count {
@@ -164,7 +165,7 @@
   font-size: 15px;
 }
 
-button {
+.delete-recipe {
   background-color: #f44336;
   color: white;
   border: none;
@@ -174,14 +175,11 @@ button {
   cursor: pointer;
   border-radius: 5px;
   transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #d32f2f;
-}
-
-button:nth-child(1) {
   background-color: #f44336;
+}
+
+.delete-recipe:hover {
+  background-color: #d32f2f;
 }
 
 .edit {
@@ -202,17 +200,28 @@ button:nth-child(1) {
   background-color: #388e3c;
 }
 
-.options a {
+.options {
+  font-family: "Montserrat", sans-serif;
   text-decoration: none;
   color: #2196f3;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  background-color: #f1f1f1;
+
+  /* font-family: "Poppins", sans-serif;
+  text-decoration: none;
   font-size: 16px;
   padding: 10px 20px;
-  background-color: #f1f1f1;
   border-radius: 5px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease; */
 }
 
-.options a:hover {
+.options:hover {
   background-color: #e3f2fd;
   color: #1565c0;
 }
@@ -353,14 +362,10 @@ button:nth-child(1) {
   margin-bottom: 20px;
 }
 
-.comment-avatar img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  margin-right: 15px;
-}
-
 .comment-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
   background-color: #f9f9f9;
   padding: 15px;
   border-radius: 8px;
@@ -368,13 +373,13 @@ button:nth-child(1) {
   width: 100%;
 }
 
-.comment-content h3 {
+.comment-body h3 {
   margin: 0;
   color: #007bff;
   font-size: 18px;
 }
 
-.comment-content p {
+.comment-body p {
   margin: 8px 0;
   color: #555555;
 }
@@ -433,7 +438,6 @@ button:nth-child(1) {
   background-color: #0056b3;
 }
 
-<<<<<<< Updated upstream
 .recipe-img-container {
   gap: 10px;
 }
@@ -442,18 +446,33 @@ button:nth-child(1) {
   height: 30vh;
   width: auto;
 }
-=======
 
-.recipe-category{
-  margin-top: 20px;
+.recipe-category {
+  margin: 10px 0;
   border-bottom: 1px solid black;
   color: #bc5718;
   cursor: pointer;
   text-decoration: none;
-  
+  font-family: "Poppins", sans-serif;
 }
 
-.recipe-category :hover{
+.recipe-category :hover {
   color: rgb(255, 38, 0);
 }
->>>>>>> Stashed changes
+
+.count {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.delete-comment {
+  border: none;
+  background-color: red;
+  padding: 3px;
+  border-radius: 5px;
+}
+
+.delete-comment:hover {
+  cursor: pointer;
+}

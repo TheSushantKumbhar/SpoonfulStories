@@ -545,6 +545,10 @@ main {
   margin-top: 10px;
   font-size: 1.2rem;
   color: var(--Chocolate);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
 }
 
 .profile {

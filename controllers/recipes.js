@@ -144,12 +144,15 @@ module.exports.findTopRecipes = async (req, res) => {
         description: 1,
         images: 1,
         likeCount: 1,
-        author: "$authorDetails.username",
+        author: {
+          id: "$authorDetails._id",
+          username: "$authorDetails.username",
+        },
       },
     },
   ]);
 
-  // console.log(topRecipes);
+  console.log(topRecipes);
 
   res.render("index", { topRecipes });
 };

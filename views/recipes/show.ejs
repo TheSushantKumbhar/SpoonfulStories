@@ -27,7 +27,6 @@
                 />
                 <a class="profile-info" href="/users/<%= recipe.author._id %>">
                   <p class="account-name"><%= recipe.author.username %></p>
-                  <p class="followers-count">0,000 followers</p>
                 </a>
               </div>
             </a>
@@ -75,14 +74,11 @@
               method="POST"
             >
               <% if (currentUser && recipe.author.equals(currentUser._id)) { %>
-              <button>Delete</button>
+              <button class="delete-recipe">Delete</button>
               <a href="/recipes/<%= recipe._id %>/edit" class="edit">Edit</a>
               <% } %>
+              <a href="/recipes" class="options">All Recipes</a>
             </form>
-
-            <div class="options">
-              <a href="/recipes">All Recipes</a>
-            </div>
           </div>
         </div>
       </div>
@@ -135,14 +131,20 @@
             </div>
             <!-- Share Button -->
             <div class="button" id="share-button">
-              <div class="circle">
-                <svg viewBox="0 0 24 24">
+              <a class="circle" onclick="copyToClipboard()">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="24px"
+                  viewBox="0 -960 960 960"
+                  width="24px"
+                  fill="#000000"
+                >
                   <path
-                    d="M18 16.08c-.76 0-1.44.3-1.96.77l-7.13-4.1a2.49 2.49 0 000-1.48l7.13-4.1a2.5 2.5 0 10-.96-1.96c0 .14.03.27.07.4l-7.13 4.1c-.54-.47-1.22-.77-1.96-.77a2.5 2.5 0 100 5c.74 0 1.42-.3 1.96-.77l7.13 4.1c-.04.13-.07.26-.07.4a2.5 2.5 0 002.5 2.5 2.5 2.5 0 000-5z"
+                    d="M680-80q-50 0-85-35t-35-85q0-6 3-28L282-392q-16 15-37 23.5t-45 8.5q-50 0-85-35t-35-85q0-50 35-85t85-35q24 0 45 8.5t37 23.5l281-164q-2-7-2.5-13.5T560-760q0-50 35-85t85-35q50 0 85 35t35 85q0 50-35 85t-85 35q-24 0-45-8.5T598-672L317-508q2 7 2.5 13.5t.5 14.5q0 8-.5 14.5T317-452l281 164q16-15 37-23.5t45-8.5q50 0 85 35t35 85q0 50-35 85t-85 35Zm0-80q17 0 28.5-11.5T720-200q0-17-11.5-28.5T680-240q-17 0-28.5 11.5T640-200q0 17 11.5 28.5T680-160ZM200-440q17 0 28.5-11.5T240-480q0-17-11.5-28.5T200-520q-17 0-28.5 11.5T160-480q0 17 11.5 28.5T200-440Zm480-280q17 0 28.5-11.5T720-760q0-17-11.5-28.5T680-800q-17 0-28.5 11.5T640-760q0 17 11.5 28.5T680-720Zm0 520ZM200-480Zm480-280Z"
                   />
                 </svg>
-              </div>
-              <p class="count">45</p>
+              </a>
+              <p class="count">share</p>
             </div>
 
             <!-- Save Button -->
@@ -152,7 +154,7 @@
                   <path d="M17 3H7a2 2 0 00-2 2v16l7-3 7 3V5a2 2 0 00-2-2z" />
                 </svg>
               </div>
-              <p class="count">67</p>
+              <p class="count">save</p>
             </div>
           </div>
         </div>
@@ -182,28 +184,38 @@
           <div class="comments-list">
             <% for (let comment of recipe.comments) { %>
             <div class="comment">
-              <div class="comment-avatar">
-                <img src="https://via.placeholder.com/50" alt="User Avatar" />
-              </div>
               <div class="comment-content">
-                <h3><%= comment.author.username %></h3>
-                <p><%= comment.body %></p>
-                <span class="comment-time">time</span>
+                <div class="comment-body">
+                  <h3><%= comment.author.username %></h3>
+                  <p><%= comment.body %></p>
+                </div>
 
-                <button class="reply-button" onclick="showReplyForm(this)">
+                <!-- <button class="reply-button" onclick="showReplyForm(this)">
                   Reply
-                </button>
-                <div class="reply-form">
+                </button> -->
+                <!-- <div class="reply-form">
                   <textarea placeholder="Write a reply..." rows="3"></textarea>
                   <button type="submit">Post Reply</button>
-                </div>
+                </div> -->
                 <% if (currentUser && comment.author.equals(currentUser._id)) {
                 %>
                 <form
                   action="/recipes/<%= recipe._id %>/comments/<%= comment.id %>?_method=DELETE"
                   method="POST"
                 >
-                  <button type="submit">Delete</button>
+                  <button type="submit" class="delete-comment">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="24px"
+                      viewBox="0 -960 960 960"
+                      width="24px"
+                      fill="#FFFFFF"
+                    >
+                      <path
+                        d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"
+                      />
+                    </svg>
+                  </button>
                 </form>
                 <% } %>
               </div>
@@ -215,5 +227,6 @@
     </div>
     <script src="/js/recipes/showComments.js"></script>
     <script src="/js/flash.js"></script>
+    <script src="/js/copyLinkToClipboard.js"></script>
   </body>
 </html>
